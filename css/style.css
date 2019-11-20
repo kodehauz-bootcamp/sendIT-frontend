@@ -27,6 +27,9 @@ body,a{
     text-overflow: ellipsis;
     padding-top: 92px;
     color:#fff;
+    text-transform: uppercase;
+    font-size: 47px;
+    font-weight: 900;
 }
 }
 @media(max-width:900px){
@@ -62,6 +65,7 @@ body,a{
     background: linear-gradient(45deg, #000000c7, #00000094),url(../images/banner-1.jpg);
     height: 400px;
     background-position:left;
+    background-attachment: fixed;
 }
 .banner-txt{
     padding:30px;
@@ -145,7 +149,7 @@ svg{
 .form-group{
     margin-bottom: 1.5em !important;
 }
-.header h3:after {
+.header-cal h3:after {
     content: "";
     display: block;
     border-bottom: 3px solid #ff2b2b;
@@ -327,3 +331,121 @@ p{
     margin-bottom: 16px;
 }
 }
+.breadcrum-li{
+    display: inline-flex;
+    padding: 0;
+    list-style-type: none;
+    font-weight: 900;
+}
+.active-li a{
+    color: #ff2b2b;
+}
+.active-li:after{
+  border-bottom:1px solid;
+}
+.active-li a:after {
+    color: #ff2b2b;
+    content: "/\00a0";
+    padding-left:5px;
+    font-weight: 900;
+
+}
+.breadcrum{
+    background: linear-gradient(45deg, #000000de, #000000eb),url(../images/breadcrumb.jpg);
+    color: #ffffff;
+    padding: 37px 0;
+    border-bottom: 3px solid #ff2b2b;
+
+}
+.history-mission h3:after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid #ff2b2b;
+    margin: 9px 0; 
+    width:80px
+
+}
+.pt-8{
+    padding-top:8em;
+}
+@media(max-width:900px){
+.social-media-icon a{
+    background:none !important;
+}
+/* .cont-footer i{
+    padding:0px 3px;
+} */
+}
+.team-img img{
+    border-radius:50%
+}
+.team-img p, .team-img h5{
+    text-align: center;
+    margin:0;
+    padding: 0;
+}
+.team-img p{
+    font-weight: bold;
+    color:#ccc;
+}
+
+.team-img {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .team-img:hover .image {
+    opacity: 0.3;
+  }
+  
+  .team-img:hover .middle {
+    opacity: 1;
+  }
+  .text {
+    
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    transition: 2s;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
