@@ -4,7 +4,7 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -17,8 +17,20 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 const header = document.querySelector('#header'),
     footer = document.querySelector('#footer');
+    
 document.addEventListener('DOMContentLoaded', loadDoc);
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
