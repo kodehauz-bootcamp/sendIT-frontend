@@ -18,19 +18,12 @@ function topFunction() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
+//To loade template for header and footer
 const header = document.querySelector('#header'),
-    footer = document.querySelector('#footer');
-    
+  footer = document.querySelector('#footer');
+let argUrl = window.location.pathname;
+  
+
 document.addEventListener('DOMContentLoaded', loadDoc);
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
@@ -38,8 +31,29 @@ function loadDoc() {
     xhttp.send();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        header.innerHTML =
-        this.responseText;
+        header.innerHTML = this.responseText;
+
+        switch (argUrl) {
+          case "/index.html":
+            header.querySelector('#home').classList.add('active');
+            break;
+          case "/about-us.html":
+            header.querySelector('#about').classList.add('active');
+            break;
+          case "/tracking.html":
+            header.querySelector('#tracking').classList.add('active');
+            break;
+          case "/contact.html":
+            header.querySelector('#contact').classList.add('active');
+            break;
+          case "/signUp.html":
+            header.querySelector('#signUp').classList.add('active');
+            break;
+          
+          default:
+            break;
+        }
+
       }
     };
     var xhttp = new XMLHttpRequest();
@@ -50,15 +64,6 @@ function loadDoc() {
         footer.innerHTML =
         this.responseText;
       }
-    };
+  }; 
   
-  }
-
-  var btnContainer = document.getElementById("activeClass");
-  var btns = btnContainer.getElementsByClassName("nav-link");
-  for (var i = 0; i < btns.length; i++){
-    btns[i].addEventListener("click", function(){
-      var current = document.getElementsByClassName("active", "");
-      this.className += " active";
-    });
   }
