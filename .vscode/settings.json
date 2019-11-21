@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 2,
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true
+}
