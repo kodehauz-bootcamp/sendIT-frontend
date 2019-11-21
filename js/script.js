@@ -53,3 +53,12 @@ function loadDoc() {
     };
   
   }
+
+  var btnContainer = document.getElementById("activeClass");
+  var btns = btnContainer.getElementsByClassName("nav-link");
+  for (var i = 0; i < btns.length; i++){
+    btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active", "");
+      this.className += " active";
+    });
+  }
