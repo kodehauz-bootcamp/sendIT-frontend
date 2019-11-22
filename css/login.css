@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 
- .containerlogin {max-width: 1500px;
-            margin:3.5% auto;
+body{-webkit-transition: 3s;
+  transition: 2s;
+}
+
+ .containerlogin {max-width: 100%;
+            margin:2% 0 ;
             display:flex;
             flex-direction:row-reverse;
-            }
+             }
 
   .containerlogin::after {
     content: "";
@@ -14,53 +18,97 @@
     display: table;
   } 
   .login{border:none;
-    width: 50%;}
+    width: 50%;
+  }
+
+    .loginclass{
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      width:85%;
+      float:right
+    }
 
     .login , .login p {
       text-align: center;
-      line-height:200%;}
+      line-height:200%;
+    }
   
     .login p{
       font-size:1.79vw;
     font-weight:900;  
   }
 
-  input {
-    width:70%;
+  input , input[type="email"]{
+    width:95%;
     padding: 1% 2%;
-    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 1s;
+    transition: 1s;
+    outline: none;
     border-radius:4px;
-    Margin:2.5%
+    Margin-top:3%;
+    
+  }
+
+  input:active {
+    background-color:rgba(85, 85, 85, 0.925)
+  }
+
+  input:focus {
+    border: 2px solid rgba(85, 85, 85, 0.925);
   }
 
   .login_button {
     display:block;
-    width:70%;
-    Margin:2.5% auto ;
+    width:60%;
+    Margin:5% auto ;
     text-align: center;
     Background-color: #FF2B2B;
     color:White; 
     font-size:1.324vw;
+    border-radius:8px;
+    -webkit-transition: 1s;
+    transition: 1s;
+
+}
+
+.login_button:hover{
+  Background-color: rgb(209, 37, 37)
 }
   .forgot {
-    margin:2.5% 15% 0 0;
+    margin:5% 2.5%;
     font-size:1.05vw;
     text-align:right;
 }
 
+  .forgot a{color:#2f2d2d;}
+
+  .forgot a:hover{
+    font-weight:bold;
+    text-decoration:none;
+  }
+
+
   .facebook, .twitter{
-    background-color:none;
-    width:70%;
+    background-color:#2f2d2d86;
+    width:80%;
     Margin:3.5% auto;
     text-align: center;
-    color:#6775F3;
-    border-radius:4px;
-    border:solid 1px rgba(128, 128, 128, 0.527)
+    border-radius:8px;
+    
+    -webkit-transition: 1s;
+    transition: 1s;
   }
 
   .facebook a, .twitter a{
     display:block;
-    width:100%
+    width:100%;
+    color:white;
+    text-decoration:none;
+  }
+
+  .facebook:hover , .twitter:hover  {
+    background-color:#2f2d2d;
   }
   
   .terms_conditions p{
@@ -68,12 +116,21 @@
     font-weight:100;
   }
 
+  .terms_conditions p a{
+    color:#2f2d2dab;
+    text-decoration:none;
+  }
+  .terms_conditions p a:hover{
+    color: #2f2d2d;
+    font-weight:bold;
+  }
+
   .containerlogin .content {
     width: 50%;
     height:inherit;
     border:gray solid 1px;
     border-radius: 10px;
-  }
+    }
 
   .highlight p{
     float:right;
@@ -82,34 +139,53 @@
     font-size: 1.65vw;
     color:#FF2B2B;
     font-weight:bold;
-    text-align:center;}
-
-    
+    text-align:center;
+    -webkit-transition: 1s;
+    transition: 1s;
+    }
 
     .content img {
       max-width: 80%;
-      max-height: 46.5%;
-      margin-left:5%;
-      /* padding-right:10%; */
+      height: auto;
       float:left;;
-      
-      /* object-fit:cover; */
-
+      -webkit-transition: 1s;
+      transition: 1s;
     }
-  @media only screen and (max-width:800px){
+    
+  @media only screen and (max-width:600px){
 
-    .containerlogin .content {border:none;}
+    .containerlogin .content {border:none;
+      width:100%;
+    }
+
+    .containerlogin {flex-direction:column-reverse;}
+
+    .login{
+      width: 100%;}
+
+      .loginclass{
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        width:90%;
+        float:none;
+        margin:auto;
+        margin-top:10%
+
+      }
 
     .content img{
-     min-width:300px;
-     height:10px;
      margin-left:0%;
-      object-fit: cover;
-      object-position:5px 10%;
+      object-fit:cover;
+      /* object-position:5x 0%; */
     }
 
     .containerlogin{
       width:100%;
     }
 
+    .login .loginclass > p:first-child{
+      font-size:150%;
+  }
+
+  .highlight p {
+    font-size:120%;
   }
