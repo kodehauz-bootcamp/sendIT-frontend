@@ -494,3 +494,21 @@ p {
 .track-li li {
   padding: 0 30px;
 }
+
+/*sign up*/
+
+.container img{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.container h2{
+  text-align: center;
+  margin-top:20px;
+}
+
+.btn-contain {
+  margin-left: 15%;
+  width: 350px;
+  padding-top: 7px;
+}
