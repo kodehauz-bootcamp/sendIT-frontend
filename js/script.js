@@ -1,7 +1,7 @@
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -18,26 +18,28 @@ function topFunction() {
 }
 
 const header = document.querySelector('#header'),
-    footer = document.querySelector('#footer');
+  footer = document.querySelector('#footer');
+
 document.addEventListener('DOMContentLoaded', loadDoc);
 function loadDoc() {
-    var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", "template/header.html", true);
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        header.innerHTML =
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "../template/header.html", true);
+  xhttp.send();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      header.innerHTML =
         this.responseText;
-      }
-    };
-    var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", "template/footer.html", true);
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        footer.innerHTML =
-        this.responseText;
-      }
-    };
+    }
+  };
   
-  }
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "../template/footer.html", true);
+  xhttp.send();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      footer.innerHTML =
+        this.responseText;
+    }
+  };
+
+}
