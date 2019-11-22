@@ -449,3 +449,37 @@ p{
   #myBtn:hover {
     background-color: #555;
   }
+/* sign-up*/
+
+.container h3{
+    text-align: center;
+    margin-top: 9px;
+}
+.container img{
+    margin-top: 45px;
+}
+
+.container a{
+    margin-left: 250px;
+    margin-top: 60px;
+}
+
+.container p{
+    margin-top: 60px;
+    margin-left: 19px;
+}
+
+.container button{
+   height: 40px;
+   width:350px;
+   margin-left:100px;
+   margin-top: 20px;
+}
+
+.login a{
+    margin-top: 10px;
+}
+
+.information input{
+    
+}
