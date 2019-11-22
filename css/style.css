@@ -509,8 +509,23 @@ p {
     border: 1px solid #ff2b2b;
 }
 
+.contact-details {
+  padding-top: 40px;
+}
+
 .contact-details i{
     padding-right: 13px;
     margin-top: 6px;
     color: #ff2b2b;
+}
+#contact-form {
+  padding-bottom: 40px;
+}
+
+.button-container{
+  margin: 0 auto;
+}
+
+#contact-form h3 {
+  text-align: center;
 }
