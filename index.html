@@ -4,49 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Sendit</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  bg-light " id="mainNav" role="navigation">
-      <div class="container">   
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png"></a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="#">About </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Tracking </a>
-            </li>
-            <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Place and Order </a>
-            </li> -->
-            <li class="nav-item">
-                    <a class="nav-link" href="#">Contact </a>
-            </li>
-            <li class="nav-item ml-42">
-                    <a class="nav-link" href="#">Sign Up </a>
-            </li>
-            <div class="nav-item">
-                <div class="nav-link"><button type="button" class="pd-1-11 btn btn-danger">Login</button></div>
-            </div>
-        </div>
-      </div>
-    </nav>
-    <div class="banner-bg mb-10">
+    <div id="header" class="wow fadeIn"></div>
+    <div class="banner-bg mb-10 wow fadeIn">
       <div class="container">
             <div class="banner-txt">
-            <h1 class="text-center">We make delivery of goods<br> faster and easier we are <br><span class="color-red">SendIt</span></h1>
+            <h1 class="text-center wow fadeInDown wow fadeIn"><span class="color-red">SendIt</span> make delivery of goods<br> faster and easier</h1>
             </div>
             <div class="card product-track mb-5">
               <div class="card-body">
@@ -65,7 +38,7 @@
         <div class="about pt-5 mb-5 ">
             <h3>About Us</h3>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 wow fadeInUp ">
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                   lobortis nisl ut aliquip ex ea commodo consequat. Nam liber tempor cum soluta nobis</p>
                   <div class="about-content">
@@ -92,134 +65,116 @@
                       </div>
                       <div>
                         <h5>Worldwide Shipping</h5>
-                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Lorem ipsum dolor sit amet e</p>
                       </div>
                     </div>
                     <a href="about-us.html" class="btn btn-danger">Read More</a>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 wow slideInRight">
                   <img src="images/about-img.png">                   
               </div>
             </div>
-          </div>
-          <div class="calculate-cost header">
-            <div class="row">
-              <div class="col-md-6 col-12">
-                <img src="images/Courier-Man.png" class="image-fluid">
-              </div>
-              <div class="col-md-6 col-12">
-               <h3 class="fw-b">Calculate Cost</h3>
-               <form class="pt-5" action="">
-                  <div class="form-group">
+        </div>
+        <div class="calculate-cost header-cal wow fadeInUp">
+          <div class="row">
+            <div class="col-md-6 col-12">
+              <img src="images/courier-man.png" class="image-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+              <h3 class="fw-b">Calculate Cost</h3>
+              <form class="pt-5" action="">
+                <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-2">
+                          <label for="email">Weight(kg):</label>
+                      </div>
+                      <div class="col-md-10">
+                          <input type="number" class="form-control" id="number" placeholder="kg" name="number">
+                      </div>
+                  </div>
+                </div> 
+                <div class="form-group">
                     <div class="row">
                         <div class="col-md-2">
-                            <label for="email">Weight(kg):</label>
+                            <label for="email">Package:</label>
                         </div>
                         <div class="col-md-10">
-                            <input type="number" class="form-control" id="number" placeholder="kg" name="number">
+                            <input type="text" class="form-control" id="text" placeholder="Package" name="text">
                         </div>
                     </div>
                   </div> 
                   <div class="form-group">
-                      <div class="row">
-                          <div class="col-md-2">
-                              <label for="email">Package:</label>
-                          </div>
-                          <div class="col-md-10">
-                              <input type="text" class="form-control" id="text" placeholder="Package" name="text">
-                          </div>
-                      </div>
-                    </div> 
-                    <div class="form-group">
-                      <div class="row">
-                          <div class="col-md-2">
-                              <label for="email">Location:</label>
-                          </div>
-                          <div class="col-md-10">
-                             
-                            <div class="locat-input">
-                              <input type="text" class="form-control mr-3" id="text" placeholder="From" name="text">
-                              <input type="text" class="form-control ml-3" id="text" placeholder="To" name="text">
-                          </div>
-                          </div>
-                      </div>
-                    </div>  
-                    <!-- <div class="total-cost-btn">
-                      <button type="submit" class=" width-5 text-center btn btn-danger ">Total Cost</button>
-                      <div class=" bg-black">N200</div>
-                    </div> -->
-              </form>
-              </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="email">Location:</label>
+                        </div>
+                        <div class="col-md-10">
+                            
+                          <div class="locat-input">
+                            <input type="text" class="form-control mr-3" id="text" placeholder="From" name="text">
+                            <input type="text" class="form-control ml-3" id="text" placeholder="To" name="text">
+                        </div>
+                        </div>
+                    </div>
+                  </div>  
+                  <div class="total-cost-btn">
+                    <button type="submit" class=" width-5 text-center btn btn-danger ">Total Cost</button>
+                    <div class=" bg-black">N200</div>
+                  </div>
+            </form>
             </div>
           </div>
+        </div>
     </div>
-    <footer>
-      <div class="footer-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-12">
-                  <img src="images/logo.png" class="logo-footer">
-                </div>
-                <div class="col-md-3 col-sm-3 col-4">
-                  <div class="quick-links">
-                    <h5>Quick Links</h5>
-                    <div><a href="#">Home</a></div>
-                    <div><a href="#">Tracking</a></div>
-                    <div><a href="#">Contact</a></div>
-                    <div><a href="#">Sign Up</a></div>
-                    <div><a href="#">Login</a></div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-4">
-                  <div class="contact-footer">
-                    <h5>Contact Us</h5>
-                    <div class="cont-footer">
-                        <i class="fas fa-map-marker-alt"></i> <p>
-                        Kodehauz
-                        No. 38 AfahaUqua Road Eket,
-                        <br>Akwa Ibom State
-                      </p>
-                    </div>
-                    <div class="cont-footer">
-                        <i class="fas fa-phone"></i>
-                        <p>
-                        08064786137,09830587
-                      </p>
-                    </div>
-                    <div class="cont-footer">
-                        <i class="fas fa-envelope"></i>
-                         <p>
-                        info@Kodehauz.com
-                      </p>
-                    </div>
-                   
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-6 col-4 ph-scre">
-                    <div class="">
-                      <h5>Get in Touch</h5>
-                      <div class="social-media-icon">
-                        <a href="#" class="fb-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="twitter-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="instagram-icon"><i class="fab fa-instagram"></i></i></a>
-                       
-                      </div>
-                    </div>
-                </div>
-            </div>
+    <div class="how-it-work wow fadeInUp">
+      <div class="container">
+        <h3>How it work</h3>
+        <div class ="row">
+          <div class="col-md-4">
+              <h5>ORDER</h5>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+               sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+          </div>
+          <div class="col-md-4">
+              <h5>WAIT</h5>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+               sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+          </div>
+          <div class="col-md-4">
+              <h5>DELIVERY</h5>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+               sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+          </div>
         </div>
       </div>
-      <div class="footer-designer">
-          <p class="text-center">	&copy; Copyright 2019 | Kodehauz </p>
+    </div>
+    <div class="delivery wow fadeInDown">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Get the fastes product delivery</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+              Nam liber tempor cum soluta nobis</p>
+          </div>
+          <div class="col-md-6">
+          <img src="images/deliveryman.png">
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+   <div id="footer" class="wow fadeInDown"></div>
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script src="js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script>
+    new WOW().init();
+    </script>
   </body>
 </html>
