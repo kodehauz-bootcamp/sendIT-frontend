@@ -15,7 +15,7 @@
     <title>Sendit-Dashboard</title>
     <script>
       
-window.onload = function () {
+      window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	theme: "light1", // "light2", "dark1", "dark2"
@@ -44,42 +44,14 @@ chart.render();
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <div class="hidden-lg togle-btn" onclick="toggleSidebar()">
+            <span><i class="fa fa-bars"></i></span>
+          </div> 
         <a class="navbar-brand" href="#"> <img src="images/logo.png"> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         
-          <div class="dashboard-mobile">
-            <ul class="navbar-nav ml-auto p-0">
-              <li class="nav-item active">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-home"></i><span class="text">Dashboard</span></a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-user"></i><span class="text">User Profile</span></a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fa fa-cart-arrow-down"></i><span class="text">Place Order</span></a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fa fa-eye"></i><span class="text">View Order</span></a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fa fa-eye"></i><span class="text">Recent Activities</span></a>
-                </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fa fa-cog"></i><span class="text">Settings</span></a>
-              </li>
-            </ul>
-          </div>
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav upnav-navbar-nav ml-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="#"><i class="fas fa-question-circle pr-1"></i>support</a>
+              <a class="nav-link" href="#"><i class="fas fa-question-circle pr-1"></i><span class="hidden-sm">support</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
@@ -97,11 +69,11 @@ chart.render();
               <div class="dropdown-divider"></div>
               <a class="dropdown-item profile-drop" href="#">edit</a>
             </div>
-          </div>
         </div>
       </nav>
       <div class="wrapper">
           <div id="sidebar">
+          
             <ul class="navbar-nav nav-sidebar">
               <li class="nav-item active">
                 <a href="#" class="nav-link">
@@ -120,8 +92,6 @@ chart.render();
               <li class="nav-item">
                 <a href="#" class="nav-link"><i class="fa fa-cog"></i><span class="text">Settings</span></a>
               </li>
-              
-              
             </ul>
           </div>
         <div class="content">
@@ -294,6 +264,9 @@ chart.render();
     new WOW().init();
     </script>
     <script>
+      function toggleSidebar(){
+        document.getElementById("sidebar").classList.toggle("active");
+      }
     </script>
   </body>
 </html>
