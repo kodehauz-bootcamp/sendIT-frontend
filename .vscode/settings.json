@@ -1,9 +1,0 @@
-{
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "workbench.tree.indent": 2,
-    "html.format.indentHandlebars": true,
-    "html.format.indentInnerHtml": true,
-    "prettier.useTabs": true,
-    "editor.formatOnType": true
-}
