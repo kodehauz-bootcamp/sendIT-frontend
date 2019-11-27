@@ -66,9 +66,9 @@ function loadDoc() {
       }
   }; 
   
-  }
+}
 
-
+//dashboard setup
 ( function( window ) {
 
 'use strict';
