@@ -287,3 +287,11 @@ color:#ccc;
   display :none !important;
 }
 }
+.avatar{
+  object-fit: cover;
+  height: 200px;
+}
+input[type="file"]{
+  visibility: hidden;
+  
+}

@@ -13,34 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <title>Sendit-Dashboard</title>
-    <script>
-      
-      window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "light1", // "light2", "dark1", "dark2"
-	animationEnabled: false, // change to true		
-	title:{
-		text: ""
-	},
-	data: [
-	{
-		// Change type to "bar", "area", "spline", "pie",etc.
-		type: "column",
-		dataPoints: [
-			{ label: "Jan",  y: 15  },
-			{ label: "Feb", y: 20  },
-			{ label: "March", y: 25  },
-			{ label: "April",  y: 30  },
-			{ label: "May",  y: 28  }
-		]
-	}
-	]
-});
-chart.render();
-
-}
-    </script>
+  
 
 </head>
 <body>
@@ -99,147 +72,108 @@ chart.render();
             <div class="container">
               <div class="dashboard-content-holder mb-3">
                 <h3>DASHBOARD</h3>
-                <div class="dash-home"><a>Home </a> / Dashboard</div>              
+                <div class="dash-home"><a href="dashboard.html">Home </a> / Edit Profile</div>              
               </div>
-              <div class="mt-5 mb-5">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="card-1">
-                      <div class="card-i"><i class="fa fa-user"></i></div>
-                      <h5>New Users</h5>
-                      <p><span>34</span> new users</p>
-                    </div>
+              <div class="edit-profile-section">
+                <div class="card-1">
+                  <div class="container ">
+                    <div class="row">
+                      <div class="col-sm-3"><!--left col-->                
+                      <div class="text-center">
+                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                        <!-- <h6>Upload a different photo...</h6> -->
+                        <input type="file" class="text-center center-block file-upload" id="selectFile" style="display:none;">
+                        <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();">
+
+                      </div></hr><br>
+                          
+                        </div><!--/col-3-->
+                      <div class="col-sm-9">
+                          <div class="tab-content">
+                            <div class="tab-pane active" id="home">
+                                <hr>
+                                  <form class="form" action="##" method="post" id="registrationForm">
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                              <label for="first_name"><h4>First name</h4></label>
+                                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                            <label for="last_name"><h4>Last name</h4></label>
+                                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                                          </div>
+                                      </div>
+                          
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                              <label for="phone"><h4>Phone</h4></label>
+                                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                                          </div>
+                                      </div>
+                          
+                                      <div class="form-group">
+                                          <div class="col-xs-6">
+                                             <label for="mobile"><h4>Mobile</h4></label>
+                                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                              <label for="email"><h4>Email</h4></label>
+                                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                              <label for="email"><h4>Location</h4></label>
+                                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                              <label for="password"><h4>Password</h4></label>
+                                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6">
+                                            <label for="password2"><h4>Verify</h4></label>
+                                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                           <div class="col-xs-12">
+                                                <br>
+                                                <button class="btn btn-lg btn-danger" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                            </div>
+                                      </div>
+                                </form>
+                              
+                              <hr>
+                              
+                             </div>
+                               
+                          </div><!--/tab-pane-->
+                          </div><!--/tab-content-->
+                
+                        </div><!--/col-9-->
+                    </div><!--/row-->
                   </div>
-                  <div class="col-md-3">
-                    <div class="card-1">
-                        <div class="card-i"><i class="fa fa-cart-arrow-down"></i></div>
-                      <h5>Order Placed</h5>
-                      <p><span>50</span> Delivered</p>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card-1">
-                      <div class="card-i"><i class="fa fa-truck"></i></div>
-                      <h5>Total Deliveries</h5>
-                      <p><span>105</span> Delivered</p>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card-1">
-                      <div class="card-i"><i class="fa fa-building"></i></div>
-                      <h5>Pending Deliveries</h5>
-                      <p><span>5</span> Pending</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="deliver-table">
-                  <p>Delivery Report</p>  
-                  <table id="datatable" class="table table-striped table-bordered hidden-sm" cellspacing="0" width="100%">    
-                      
-                      <thead >
-                            <tr>
-                                <th>Product ID</th>
-                                <th> Product Name</th>
-                                <th>Order Date</th>
-                                <th>Order Status</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>                            
-                              <th>Product ID</th>
-                              <th>Product Name</th>
-                              <th>Order Date</th>
-                              <th>Order Status</th>
-                              <th>Total</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                <td>123983</td>
-                                <td>Hp Laptop</td>
-                                <td>19th Aug, 2019</td>
-                                <td>Process</td>
-                                <td>2,000</td>
-                            </tr>
-                            <tr>
-                                <td>123983</td>
-                                <td>Iphone</td>
-                                <td>20th Aug, 2019</td>
-                                <td>Pending</td>
-                                <td>4,500</td>
-                            </tr>
-                            <tr>
-                              <td>123983</td>
-                              <td>Iphone</td>
-                              <td>20th Aug, 2019</td>
-                              <td>Delivered</td>
-                              <td>4,500</td>
-                          </tr>
-                          <tr>
-                              <td>123983</td>
-                              <td>Iphone</td>
-                              <td>20th Aug, 2019</td>
-                              <td>Cancel</td>
-                              <td>4,500</td>
-                          </tr>
-                        </tbody>
-                    </table>
-                </div>
-              <div class="row mt-5">
-                <div class="col-md-6">
-                  <div class="card-1 activity-log">
-                    <div class="menu-drop-act">
-                      <h5 class="pull-left">Activity Log </h5>
-                      <div class="nav-item dropdown pull-right">
-                          <a class="nav-link dropdown-toggle no-toggle-arrow color-cc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
-                          </a>
-                          <div class="dropdown-menu profile-drop" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item profile-drop" href="#">profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item profile-drop" href="#">logout</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item profile-drop" href="#">edit</a>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                      <div class="">
-                        <p><span>Product Id:</span> 10925</p>
-                        <p><span>Status:</span> Delivered</p>
-                        <p><span>Date:</span> 1st Jan, 2019</p>
-                        <div class="dropdown-divider"></div>
-                      </div>
-                      <div class="">
-                          <p><span>Product Id:</span> 10925</p>
-                          <p><span>Status:</span> Delivered</p>
-                          <p><span>Date:</span> 1st Jan, 2019</p>
-                          <div class="dropdown-divider"></div>
-                        </div>
-                      <div class="">
-                        <p><span>Product Id:</span> 10925</p>
-                        <p><span>Status:</span> Delivered</p>
-                        <p><span>Date:</span> 1st Jan, 2019</p>
-                        <div class="dropdown-divider"></div>
-                      </div>
-                      <div class="">
-                        <p><span>Product Id:</span> 10925</p>
-                        <p><span>Status:</span> Delivered</p>
-                        <p><span>Date:</span> 1st Jan, 2019</p>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-1">
-                        <h5 class="color-red">Delivery Progress </h5>
-                        <div class="dropdown-divider"></div>
-                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                    </div>
                 </div>
               </div>
+
+
+
             </div>
           </main>       
         </div>
@@ -264,7 +198,24 @@ chart.render();
     new WOW().init();
     </script>
     <script>
-    
+      $(document).ready(function() {    
+          var readURL = function(input) {
+              if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+
+                  reader.onload = function (e) {
+                      $('.avatar').attr('src', e.target.result);
+                  }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+
+                $(".file-upload").on('change', function(){
+                    readURL(this);
+                });
+                });
     </script>
   </body>
 </html>
