@@ -135,6 +135,7 @@ color:#ccc;
     box-shadow: 0px 1px 3px 0px #b1b3b1f7;
     border: none;
     margin-bottom: 12px;
+    min-height:100%;
   }
   .card-i{
     padding: 12px 0px 14px 0px;
@@ -275,5 +276,14 @@ color:#ccc;
 }
 .navbar {
 	padding: 0 91px;
+}
+}
+@media (max-width: 700px){
+.navbar {
+    padding: 0px 58px;
+
+}
+.hidden-sm{
+  display :none !important;
 }
 }

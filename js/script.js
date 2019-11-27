@@ -187,3 +187,37 @@ if ( typeof define === 'function' && define.amd ) {
 	init();
 
 })();
+
+// dashboard sidebars
+
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+// chart graph
+
+window.onload = function () {
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    theme: "light1", // "light2", "dark1", "dark2"
+    animationEnabled: false, // change to true		
+    title:{
+      text: ""
+    },
+    data: [
+    {
+      // Change type to "bar", "area", "spline", "pie",etc.
+      type: "column",
+      dataPoints: [
+        { label: "Jan",  y: 15  },
+        { label: "Feb", y: 20  },
+        { label: "March", y: 25  },
+        { label: "April",  y: 30  },
+        { label: "May",  y: 28  }
+      ]
+    }
+    ]
+  });
+  chart.render();
+  
+  }
