@@ -248,7 +248,7 @@ color:#ccc;
 
 #sidebar .togle-btn span{
   display: block;
-  width: 30px%;
+  width: 30px;
   height: 5px;
   background: #000;
   margin: 3px 0 19px 7px;
@@ -294,4 +294,54 @@ color:#ccc;
 input[type="file"]{
   visibility: hidden;
   
+}
+
+/* adminViewing profile page */
+
+.pagination {
+  display: inline-flex !important;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: #666;
+}	
+.pagination li.active a, .pagination li.active a.page-link {
+  background: #03A9F4;
+}
+.pagination li.active a:hover {        
+  background: #0397d6;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.clearfix .hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.avatar-profile {
+  width: 30px;
+  height: 30px;
+}
+
+.user-section i {
+  color: #ff2b2b;
+  margin-right: 6px;
 }
