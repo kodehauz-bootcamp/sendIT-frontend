@@ -529,3 +529,6 @@ p {
 #contact-form h3 {
   text-align: center;
 }
+input[type="file"]{
+  color: transparent;
+}
