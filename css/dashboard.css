@@ -88,8 +88,9 @@ a {
 .nav-sidebar >.nav-item a:hover {
 	-webkit-transition: 2s;
 	color: #ff2b2b;
-	margin-left: 15px;
+	margin-left: 6px;
 }
+
 .profile-drop a:hover{
   color:#ff2b2b ;
   background:none;
@@ -292,12 +293,32 @@ color:#ccc;
   height: 200px;
 }
 input[type="file"]{
-  visibility: hidden;
-  
+  color:transparent
+
+}
+.h4, h4 {
+  font-size: 1.2rem;
 }
 
-/* adminViewing profile page */
-
+.locat-input-dashboard{
+  display: flex;
+}
+.btn-danger{
+  background: #ff2b2b;
+    padding: 4px 22px;
+    border: 1px solid #ff2b2b
+}
+.bg-blackForm{
+  width: 50%;
+  background: #000;
+  text-align: center;
+  padding-top: 4px;
+  border-radius: 4px;
+  color: #fff;
+}
+.bg-dangerForm{
+  width: 50%;
+}
 .pagination {
   display: inline-flex !important;
   margin: 0 0 5px;
@@ -316,12 +337,12 @@ input[type="file"]{
 }
 .pagination li a:hover {
   color: #666;
-}	
+}   
 .pagination li.active a, .pagination li.active a.page-link {
-  background: #03A9F4;
+  background: #ff2b2b;
 }
 .pagination li.active a:hover {        
-  background: #0397d6;
+  background: #ff2b2b;
 }
 .pagination li.disabled i {
   color: #ccc;
@@ -335,12 +356,10 @@ input[type="file"]{
   margin-top: 10px;
   font-size: 13px;
 }
-
 .avatar-profile {
   width: 30px;
   height: 30px;
 }
-
 .user-section i {
   color: #ff2b2b;
   margin-right: 6px;
