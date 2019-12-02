@@ -91,7 +91,10 @@ a {
 .product-track {
   -webkit-box-shadow: 0 0 10px #aba6a6d1;
   padding: 15px;
-  /* margin-top: 64px; */
+}
+
+.mag-64 {
+  margin-top: 64px;
 }
 .mb-10 {
   margin-bottom: 5rem;
@@ -619,3 +622,6 @@ padding-top: 6em;
 }
 }
 
+.quick-links a {
+  text-decoration: none;
+}

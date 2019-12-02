@@ -454,3 +454,7 @@ select {
 .form-title {
   color: #ff2b2b;
 }
+
+.admin-logo {
+  display: flex;
+}

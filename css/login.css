@@ -73,15 +73,19 @@ body{-webkit-transition: 3s;
 }
 
 .login_button:hover{
-  Background-color: rgb(209, 37, 37)
-}
-  .forgot {
-    margin:5% 2.5%;
-    font-size:1.05vw;
-    text-align:right;
+  Background-color: #000;
+  color: #fff;
 }
 
-  .forgot a{color:#2f2d2d;}
+.forgot {
+  margin:5% 2.5%;
+  font-size:1.05vw;
+  text-align:right;
+}
+
+  .forgot a{
+    color:#2f2d2d;
+  }
 
   .forgot a:hover{
     font-weight:bold;
@@ -100,15 +104,33 @@ body{-webkit-transition: 3s;
     transition: 1s;
   }
 
-  .facebook a, .twitter a{
+  .facebook a {
     display:block;
     width:100%;
     color:white;
     text-decoration:none;
+    background: #ff2b2b;
+    border-radius: 6px;
   }
 
-  .facebook:hover , .twitter:hover  {
-    background-color:#2f2d2d;
+  .twitter a {
+    background-color:#000;
+    display:block;
+    width:100%;
+    color:white;
+    text-decoration:none;
+    border-radius: 6px;
+
+  }
+
+  .facebook:hover {
+    background-color:#000;
+    
+  }
+
+  .twitter:hover  {
+    background:#ff2b2b;
+    color: #fff;
   }
   
   .terms_conditions p{
