@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Sendit-Dashboard</title>
+ 
+
+  </head>
+
+  <body>
+      <section class="container">
+        <div class="">
+          <div class="row signup-container">
+            <div class="col-md-6 admin-login wow lightSpeedIn">
+              <h1>Log In</h1>
+                <form action="dashboard.html">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="email" class="form-control" id="name" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="password" class="form-control" id="name" placeholder="Password">
+                    </div>
+                    <div class="btn-contain py-2">
+                      <button type="submit" class="btn btn-danger btn-block">Log In</button>
+                    </div>
+      
+                  </form>
+              
+
+            </div>
+            <div class="col-md-6 admin-greeting d-none d-md-block  wow fadeInUp">
+              <h1 class="fadeInDown">Good Morning Admin</h1>
+              <p>Hope you have a nice day ahead.</p>
+              
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script type="text/javascript" src="libs/jquery.slimscroll.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script>
+    new WOW().init();
+    </script>
+    <script>
+      function toggleSidebar(){
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
