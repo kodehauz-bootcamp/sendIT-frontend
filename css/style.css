@@ -135,6 +135,9 @@ svg {
   padding: 4px 100px;
   margin-bottom: 40px;
 }
+.mag-64{
+  margin-top:64px;
+}
 .about:after {
   content: "";
   display: block;
