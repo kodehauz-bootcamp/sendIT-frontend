@@ -90,6 +90,7 @@ a {
 	color: #ff2b2b;
 	margin-left: 6px;
 }
+
 .profile-drop a:hover{
   color:#ff2b2b ;
   background:none;
@@ -248,7 +249,7 @@ color:#ccc;
 
 #sidebar .togle-btn span{
   display: block;
-  width: 30px%;
+  width: 30px;
   height: 5px;
   background: #000;
   margin: 3px 0 19px 7px;
@@ -362,3 +363,35 @@ input[type="file"]{
 .user-section i {
   color: #ff2b2b;
   margin-right: 6px;
+}
+.invoice-payment h5 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 25px;
+}
+.invoice-payment span{
+  font-weight:700;
+  font-size:14px;
+
+}
+.invoice-payment h5{
+  font-size:16px;
+}
+.invoice-payment h3{
+font-weight:900;
+font-size:25px;
+}
+
+.color-hash{
+  color:#807e7e;
+}
+.mt-8{
+  margin-top:5rem
+  
+} 
+@media(min-width:900px){
+  .lag-width{
+    width:80%;
+    margin:0 auto;
+}
+}
