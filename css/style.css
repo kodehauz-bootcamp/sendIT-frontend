@@ -91,7 +91,10 @@ a {
 .product-track {
   -webkit-box-shadow: 0 0 10px #aba6a6d1;
   padding: 15px;
-  /* margin-top: 64px; */
+}
+
+.mag-64 {
+  margin-top: 64px;
 }
 .mb-10 {
   margin-bottom: 5rem;
@@ -218,6 +221,11 @@ footer p {
   -webkit-transition: 2s;
   color: #ff2b2b;
 }
+
+/* contact-details
+.contact-details {
+  addin
+} */
 .contact-footer span {
   font-weight: 900;
 }
@@ -617,3 +625,6 @@ padding-top: 6em;
 }
 }
 
+.quick-links a {
+  text-decoration: none;
+}

@@ -72,61 +72,111 @@
                 <h3>USER DASHBOARD</h3>
                 <div class="dash-home"><a href="dashboard.html">Home </a> / Place Order</div>              
               </div>
-              <div class="edit-profile-section">
+              <div class="order-section">
                 <div class="card-1">
                   <div class="container mt-5 ">
                     <div class="row">
-                      <div class="col-md-2"></div>
-                      <div class="col-md-8">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10">
                         <h5 class="text-center mb-3">Fill this Form to send your package</h5>
                           <form class="" action="">
                               <div class="form-group">
+                                  <h5 class="form-title my-4">Sender's info</h5>
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <label for="email">Weight(kg):</label>
+                                    <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" placeholder="Your Name" name="name">
                                     </div>
-                                    <div class="col-md-10">
-                                        <input type="number" class="form-control" id="number" placeholder="kg" name="number">
-                                    </div>
+
+                                    <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" placeholder="Package Name" name="name">
+                                      </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                      <select>
+                                          <option value="Akwa Ibom">Akwa ibom</option>
+                                          <option value="Abia">Abia</option>
+                                          <option value="Adamawa">Adamawa</option>
+                                          <option value="Anambra">Anambra</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Address" name="address">
+                                  </div>
                                 </div>
                               </div> 
                               <div class="form-group">
                                   <div class="row">
-                                      <div class="col-md-2">
-                                          <label for="email">Package:</label>
+                                      <div class="col-md-6">
+                                          <input type="email" class="form-control" id="text" placeholder="Email" name="text">
                                       </div>
-                                      <div class="col-md-10">
-                                          <input type="text" class="form-control" id="text" placeholder="Package Name" name="text">
+                                      <div class="col-md-6">
+                                          <input type="tel" class="form-control" id="text" placeholder="Phone Number" name="phone">
                                       </div>
                                   </div>
                                 </div> 
-                                <div class="form-group ">
+
+
+                                <h5 class=" form-title my-4">Deliver To?</h5>
+                                
+                                <div class="form-group">
                                   <div class="row">
-                                      <div class="col-md-2">
-                                          <label for="email">Location:</label>
+                                    <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" placeholder="Recipient's Name" name="name">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" placeholder="Package Name" name="name">
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                      <select>
+                                          <option value="Akwa Ibom">Akwa ibom</option>
+                                          <option value="Abia">Abia</option>
+                                          <option value="Adamawa">Adamawa</option>
+                                          <option value="Anambra">Anambra</option>
+                                        </select>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Address" name="address">
+                                  </div>
+                                </div>
+                              </div> 
+                              <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <input type="email" class="form-control" id="text" placeholder="Email" name="text">
                                       </div>
-                                      <div class="col-md-10">
-                                          
-                                        <div class="locat-input-dashboard">
-                                          <input type="text" class="form-control mr-3" id="text" placeholder="From" name="text">
-                                          <input type="text" class="form-control ml-3" id="text" placeholder="To" name="text">
-                                      </div>
+                                      <div class="col-md-6">
+                                          <input type="tel" class="form-control" id="text" placeholder="Phone Number" name="phone">
                                       </div>
                                   </div>
-                                </div>  
-                                <div class="total-cost-btn d-flex mx-auto mb-5 mt-3">
-                                  <button type="submit" class="dangerForm w-50 text-center btn btn-danger ">Total Cost</button>
-                                  <div class="bg-blackForm">N200</div>
+                                </div> 
+
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="btn-contain py-4">
+                                      <button type="submit" class="btn btn-danger btn-block">Confirm Order</button>
+                                    </div>
+                                  </div>
                                 </div>
-                          </form>
-                      </div>
-                      <div class="col-md-2 mb-5"></div>
-                  </div>
-                    
-                    </div><!--/row-->
+                              
+                            </form>
+                        </div>
+                        <div class="col-md-1 mb-5"></div>
+                    </div>
+                      
+                      </div><!--/row-->
+                    </div>
                   </div>
                 </div>
-              </div>
 
             
             </div>
