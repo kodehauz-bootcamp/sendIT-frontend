@@ -395,3 +395,12 @@ font-size:25px;
     margin:0 auto;
 }
 }
+@media (min-width: 1200px){
+.dashboard-footer {
+  background: #f8f9fa;
+  text-align: right;
+  color: #000;
+  margin: 0;
+  padding: 11px 3px 1px 9px;
+  max-width: 1175px;
+}
