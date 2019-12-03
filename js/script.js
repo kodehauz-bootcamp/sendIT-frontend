@@ -226,20 +226,20 @@ window.onload = function () {
 
   // add user
 
-  function productsAdd() {
-    $("#productTable tbody").append(
-        "<tr>" +
-          "<td>My First Video</td>" +
-          "<td>6/11/2015</td>" +
-          "<td>www.pluralsight.com</td>" +
-        "</tr>"
-    );
-  }
+  // function productsAdd() {
+  //   $("#productTable tbody").append(
+  //       "<tr>" +
+  //         "<td>My First Video</td>" +
+  //         "<td>6/11/2015</td>" +
+  //         "<td>www.pluralsight.com</td>" +
+  //       "</tr>"
+  //   );
+  // }
 
-  if ($("#productTable tbody").length == 0) {
-    $("#productTable").append("<tbody></tbody>");
-  }
+  // if ($("#productTable tbody").length == 0) {
+  //   $("#productTable").append("<tbody></tbody>");
+  // }
 
-  $(document).ready(function () {
-    productsAdd();
-  });
+  // $(document).ready(function () {
+  //   productsAdd();
+  // });
