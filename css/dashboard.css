@@ -407,7 +407,7 @@ background-image: linear-gradient(326deg, #000c14 69%, #ff2b2b 0%);
 }
 
 .admin-signup {
-  padding: 100px 30px;
+  padding: 70px 30px;
 }
 
 .admin-login h1, .admin-signup h1 {
@@ -419,7 +419,7 @@ background-image: linear-gradient(326deg, #000c14 69%, #ff2b2b 0%);
 }
 
 .admin-login {
-  padding: 200px 40px;
+  padding:100px 40px;
 }
 
 .admin-greeting {
