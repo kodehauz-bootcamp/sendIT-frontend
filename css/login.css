@@ -6,11 +6,12 @@ body{-webkit-transition: 3s;
   transition: 2s;
 }
 
- .containerlogin {max-width: 100%;
-            margin:2% 0 ;
-            display:flex;
-            flex-direction:row-reverse;
-             }
+ .containerlogin {
+    max-width: 100%;
+    margin:5% 0 9%;
+    display:flex;
+    flex-direction:row-reverse;
+  }
 
   .containerlogin::after {
     content: "";
@@ -22,9 +23,12 @@ body{-webkit-transition: 3s;
   }
 
     .loginclass{
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 5px 8px 16px 5px rgba(121, 118, 118, 0.2);
+      /* border:gray solid 1px; */
+      padding: 20px 30px;
       width:85%;
-      float:right
+      float:right;
+      border-radius: 10px;
     }
 
     .login , .login p {
@@ -150,7 +154,7 @@ body{-webkit-transition: 3s;
   .containerlogin .content {
     width: 50%;
     height:inherit;
-    border:gray solid 1px;
+    /* border:gray solid 1px; */
     border-radius: 10px;
     }
 
@@ -174,19 +178,21 @@ body{-webkit-transition: 3s;
       transition: 1s;
     }
     
-  @media only screen and (max-width:600px){
+@media only screen and (max-width:600px){
 
-    .containerlogin .content {border:none;
+    .containerlogin .content {
+      border:none;
       width:100%;
     }
 
     .containerlogin {flex-direction:column-reverse;}
 
     .login{
-      width: 100%;}
+      width: 100%;
+    }
 
       .loginclass{
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
         width:90%;
         float:none;
         margin:auto;
@@ -211,3 +217,4 @@ body{-webkit-transition: 3s;
   .highlight p {
     font-size:120%;
   }
+}
