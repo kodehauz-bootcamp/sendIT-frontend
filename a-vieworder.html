@@ -17,71 +17,26 @@
 
 </head>
 <body>
-      <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-        <div class="hidden-lg togle-btn" onclick="toggleSidebar()">
-            <span><i class="fa fa-bars"></i></span>
-          </div> 
-        <a class="navbar-brand" href="#"> <img src="images/logo.png"> </a>
-        <ul class="navbar-nav upnav-navbar-nav ml-auto hidden-sm">
-            <li class="nav-item ">
-              <a class="nav-link" href="#"><i class="fas fa-question-circle pr-1"></i><span class="hidden-sm">support</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
-            </li>
-            
-          </ul>
-          <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle color-cc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="https://via.placeholder.com/50">
-            </a>
-            <div class="dropdown-menu profile-drop" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item profile-drop" href="#">profile</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item profile-drop" href="#">edit</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item profile-drop" href="admin-login.html">logout</a>
-                           
-            </div>
-        </div>
-      </nav>
-      <div class="wrapper">
-          <div id="sidebar">
-          
-            <ul class="navbar-nav nav-sidebar">
-              <li class="nav-item active">
-                <a href="dashboard.html" class="nav-link">
-                  <i class="fa fa-home"></i><span class="text">Dashboard</span></a>
-              </li>
-              <li class="nav-item">
-                <a href="client.html" class="nav-link">
-                  <i class="fa fa-user"></i><span class="text">Client</span></a>
-              </li>
-              <li class="nav-item">
-                <a href="a-vieworder.html" class="nav-link"><i class="fa fa-cart-arrow-down"></i><span class="text">View Order</span></a>
-              </li>
-              
-            </ul>
-          </div>
+      <div id="adminDashboardHeader"></div>
         <div class="content">
           <main>
             <div class="container">
               <div class="dashboard-content-holder mb-3">
                 <h3>ADMIN DASHBOARD</h3>
-                <div class="dash-home"><a>Home </a> / Dashboard</div>              
+                <div class="dash-home"><a>Home </a> / View Order</div>              
               </div>
               <div class="card-1">
               <div class="mt-5 mb-5">
                   <div class="table-title">
                       <div class="row">
-                          <div class="col-sm-8"><h2>Client <b>Details</b></h2></div>
+                          <div class="col-sm-8"><h2>Client <b>Orders</b></h2></div>
                           <div class="col-sm-4">
                               <button type="button" class="btn btn-danger add-new"><i class="fa fa-plus"></i> Add New</button>
                           </div>
                       </div>
                   </div>
 
-                <div class="table-wrapper user-section overflow-auto table-condensed wow lightSpeedIn">
+                <div class="table-wrapper user-section overflow-auto table-condensed wow fadeInUp">
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
@@ -197,10 +152,7 @@
             </div>
           </main>       
         </div>
-        <div class="dashboard-footer">
-            <p> 2019  &copy Kodehauz</p>
-          </div>
-      </div>
+        <div id="userDashboardfooter"></div>
 
 
 
