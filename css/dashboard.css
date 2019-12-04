@@ -2,6 +2,9 @@ body,
 a {
 	font-family: "Nunito Sans", sans-serif;
 }
+#userDashboardHeader {
+  margin-bottom: 59px;
+}
 .dropdown > .dropdown-menu {
 	top: 200%;
 	transition: 0.3s all ease-in-out;
@@ -169,6 +172,7 @@ color:#ccc;
     margin-top: 23px;
   }
   @media(min-width:900px){
+    
   .dashboard-mobile{
     display:none;
   }
@@ -226,6 +230,7 @@ color:#ccc;
   color: #000;
   margin: 0;
   padding: 11px 3px 1px 9px;
+  margin-top:90px;
 }
 @media(max-width:900px){
   .hidden-sm{
@@ -457,6 +462,7 @@ select {
 
 .admin-logo {
   display: flex;
+}
 .invoice-payment h5 {
     margin: 0;
     font-weight: 900;
@@ -482,6 +488,9 @@ font-size:25px;
   margin-top:5rem
   
 } 
+#adminDashboardHeader{
+  margin-bottom: 59px;
+}
 @media(min-width:900px){
   .lag-width{
     width:80%;
@@ -495,5 +504,24 @@ font-size:25px;
   color: #000;
   margin: 0;
   padding: 11px 3px 1px 9px;
+ 
+}
+.dashboard-content-text{
   max-width: 1175px;
+}
+}
+.mt-8{
+  margin-top: 8rem;
+}
+
+
+.nav-sidebar > .nav-link.active {
+  color: rgb(255, 43, 43);
+}
+a, a:hover{
+  color:#ff2b2b;
+  text-decoration: none;
+}
+.active{
+  color:#ff2b2b!important;
 }
