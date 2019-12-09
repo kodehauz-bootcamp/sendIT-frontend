@@ -136,4 +136,142 @@
       });
     </script>
   </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon44.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="./js/UserAuth.js"></script>
+    <title>Sendit-Dashboard</title>
+  
+
+</head>
+<body>
+  <div id="userDashboardHeader"></div>
+        <div class="content">
+          <main>
+            <div class="container">
+              <div class="dashboard-content-holder mb-3">
+                <h3>USER DASHBOARD</h3>
+                <div class="dash-home"><a href="dashboard.html">Home </a> / Profile</div>              
+              </div>
+              <div class="edit-profile-section">
+                <div class="card-1">
+                  <div class="container mt-5 ">
+                        <h3 class="text-center mb-3">Profile Details</h3>
+                    <div class="row">
+                      <div class="col-sm-3 text-center col-12 col-xs-12"><!--left col-->                
+                        <div class="">
+                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                            <input type="file" id="avatar" class="text-center center-block file-upload d-none" >
+                          </div></hr><br>
+
+                        </div><!--/col-3-->
+                      <div class="col-sm-9 ">
+                                  <form class="form mb-5 wow fadeInUp" action="" method="post" id="registrationForm">
+                                         
+                                    <div class="form-group">
+                                          <div class="col-xs-6 col-md-10">
+                                              <label for="first_name"><h4>First name</h4></label>
+                                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Promise" disabled>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6 col-md-10">
+                                            <label for="last_name"><h4>Last name</h4></label>
+                                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Orung" disabled>
+                                          </div>
+                                      </div>
+                          
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6 col-md-10 ">
+                                              <label for="phone"><h4>Phone</h4></label>
+                                              <input type="text" class="form-control" name="phone" id="phone" placeholder="08060569196" disabled>
+                                          </div>
+                                      </div>
+                          
+                                      <div class="form-group">
+                                          <div class="col-xs-6 col-md-10">
+                                             <label for="mobile"><h4>Mobile</h4></label>
+                                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="08064786137" disabled>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6 col-md-10">
+                                              <label for="email"><h4>Email</h4></label>
+                                              <input type="email" class="form-control" name="email" id="email" placeholder="magnificentorung@email.com" disabled>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          
+                                          <div class="col-xs-6 col-md-10">
+                                              <label for="email"><h4>Location</h4></label>
+                                              <input type="email" class="form-control" id="location" placeholder="38 AfahaUqua Road Eket" disabled>
+                                          </div>
+                                      </div>
+                                </form>
+                          </div><!--/tab-content-->
+                
+                        </div><!--/col-9-->
+                    </div><!--/row-->
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </main>       
+        </div>
+        <div id="userDashboardfooter"></div>
+
+
+        <script src="js/dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script type="text/javascript" src="libs/jquery.slimscroll.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script>
+    new WOW().init();
+    </script>
+    <script>
+        $(document).ready(function() {
+
+    
+      var readURL = function(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  $('.avatar').attr('src', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+
+
+      $(".file-upload").on('change', function(){
+          readURL(this);
+      });
+      });
+    </script>
+  </body>
 </html>
