@@ -62,8 +62,14 @@ function signUpUser(e) {
     // return console.log(userDetails)
     //send through the api
     
-    axios.post("https://senditappkh.herokuapp.com/api/v1/signup", userDetails)
-      .then(function (response) {
+    fetch("https://senditappkh.herokuapp.com/api/v1/signup", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userDetails)
+      }).then(function (response) {
       return response.json();
       }).then(function (data) {
         return console.log(data)
