@@ -29,12 +29,12 @@
 
             <p>Log in</p>
 
-            <form>
-              <input type="email" name="femail" placeholder="Email" required>
-              <input type="password" name="fpwd" placeholder="Password" required>
+            <form id="myForm">
+              <input type="email" name="loginmail" id="loginEmail" placeholder="Email" required>
+              <input type="password" name="fpwd" id="loginPassword" placeholder="Password" required>
 
               <div>
-                <button class="login_button btn" type="submit">Log In</button>
+                <button class="login_button btn" id="buttonClick" type="submit">Log In</button>
               </div>
 
             </form>
@@ -72,11 +72,13 @@
       </div>
     </div>
 
-
+<div class="result"></div>
 
     <div id="footer"></div>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>    
+    <script src="./js/UI.js"></script>
+    <script src="./js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
