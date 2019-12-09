@@ -18,9 +18,12 @@ function topFunction() {
 }
 
 
-//To loade template for header and footer
+//To load template for header and footer
 const header = document.querySelector('#header'),
-  footer = document.querySelector('#footer');
+  footer = document.querySelector('#footer'),
+userDashboardHeader = document.querySelector('#userDashboardHeader'),
+userDashboardfooter = document.querySelector('#userDashboardfooter'),
+adminDashboardHeader = document.querySelector('#adminDashboardHeader');
 let argUrl = window.location.pathname;
   
 
@@ -65,8 +68,77 @@ function loadDoc() {
         this.responseText;
       }
   }; 
+  var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "template/user-dashboard-header.html", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        userDashboardHeader.innerHTML =
+          this.responseText;
+          switch (argUrl) {
+            case "/dashboard.html":
+              userDashboardHeader.querySelector('#dashboard').classList.add('active');
+              break;
+            case "/profile.html":
+              userDashboardHeader.querySelector('#profile').classList.add('active');
+              break;
+            case "/place-order.html":
+              userDashboardHeader.querySelector('#placeOrder').classList.add('active');
+              break;
+            case "/edit.html":
+              userDashboardHeader.querySelector('#edit').classList.add('active');
+              break;
+            case "/parcel-detail.html":
+              userDashboardHeader.querySelector('#parcelDetail').classList.add('active');
+              break;
+            
+            default:
+              break;
+          }
+  
+      }
+  };
+  var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "template/user-dashboard-footer.html", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        userDashboardfooter.innerHTML =
+        this.responseText;
+      }
+  };
+  var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "template/admin-dashboard-header.html", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        adminDashboardHeader.innerHTML =
+          this.responseText;
+          switch (argUrl) {
+            case "/admin-dashboard.html":
+              adminDashboardHeader.querySelector('#adminDashboard').classList.add('active');
+              break;
+            case "/admin-profile.html":
+              adminDashboardHeader.querySelector('#adminProfile').classList.add('active');
+              break;
+            case "/a-vieworder.html":
+              adminDashboardHeader.querySelector('#viewOrder').classList.add('active');
+              break;
+            case "/admin-edit-profile.html":
+              adminDashboardHeader.querySelector('#adminEditProfile').classList.add('active');
+              break;
+            case "/client.html":
+              adminDashboardHeader.querySelector('#client').classList.add('active');
+              break;
+            
+            default:
+              break;
+          }
+      }
+  };
   
 }
+
 
 //dashboard setup
 ( function( window ) {
@@ -222,24 +294,4 @@ window.onload = function () {
   
   }
 
-
-
-  // add user
-
-  // function productsAdd() {
-  //   $("#productTable tbody").append(
-  //       "<tr>" +
-  //         "<td>My First Video</td>" +
-  //         "<td>6/11/2015</td>" +
-  //         "<td>www.pluralsight.com</td>" +
-  //       "</tr>"
-  //   );
-  // }
-
-  // if ($("#productTable tbody").length == 0) {
-  //   $("#productTable").append("<tbody></tbody>");
-  // }
-
-  // $(document).ready(function () {
-  //   productsAdd();
-  // });
+  

@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> -->
+<<<<<<< HEAD
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+=======
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon44.png">
+>>>>>>> upstream/develop
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
@@ -17,41 +21,40 @@
 
 </head>
 <body>
-  <div id="userDashboardHeader"></div>
+  <div id="adminDashboardHeader"></div>
         <div class="content">
           <main>
-            <div class="container ">
-              <div class="dashboard-content-holder  wow fadeInUp mb-3">
-                <h3> USER DASHBOARD</h3>
-                <div class="dash-home"><a href="dashboard.html">Home </a> / Edit Profile</div>              
+            <div class="container">
+              <div class="dashboard-content-holder mb-3">
+                <h3>ADMIN DASHBOARD</h3>
+                <div class="dash-home"><a href="dashboard.html">Home </a> / Profile</div>              
               </div>
               <div class="edit-profile-section">
                 <div class="card-1">
                   <div class="container mt-5 ">
+                        <h3 class="text-center mb-3">Profile Details</h3>
                     <div class="row">
                       <div class="col-sm-3 text-center col-12 col-xs-12"><!--left col-->                
                         <div class="">
                             <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                            <input type="file" id="avatar" class="text-center center-block file-upload">
-                            
+                            <input type="file" id="avatar" class="text-center center-block file-upload d-none" >
                           </div></hr><br>
 
                         </div><!--/col-3-->
-                      <div class="col-sm-9  wow fadeIn">
-                          <div class="tab-content">
-                            <div class="tab-pane active" id="home">
-                                  <form class="form" action="##" method="post" id="registrationForm">
-                                      <div class="form-group">
+                      <div class="col-sm-9 ">
+                                  <form class="form mb-5 wow fadeInUp" action="" method="post" id="registrationForm">
+                                         
+                                    <div class="form-group">
                                           <div class="col-xs-6 col-md-10">
                                               <label for="first_name"><h4>First name</h4></label>
-                                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Promise" disabled>
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           
                                           <div class="col-xs-6 col-md-10">
                                             <label for="last_name"><h4>Last name</h4></label>
-                                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Orung" disabled>
                                           </div>
                                       </div>
                           
@@ -59,58 +62,31 @@
                                           
                                           <div class="col-xs-6 col-md-10 ">
                                               <label for="phone"><h4>Phone</h4></label>
-                                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                                              <input type="text" class="form-control" name="phone" id="phone" placeholder="08060569196" disabled>
                                           </div>
                                       </div>
                           
                                       <div class="form-group">
                                           <div class="col-xs-6 col-md-10">
                                              <label for="mobile"><h4>Mobile</h4></label>
-                                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="08064786137" disabled>
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           
                                           <div class="col-xs-6 col-md-10">
                                               <label for="email"><h4>Email</h4></label>
-                                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                                              <input type="email" class="form-control" name="email" id="email" placeholder="magnificentorung@email.com" disabled>
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           
                                           <div class="col-xs-6 col-md-10">
                                               <label for="email"><h4>Location</h4></label>
-                                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                                              <input type="email" class="form-control" id="location" placeholder="38 AfahaUqua Road Eket" disabled>
                                           </div>
-                                      </div>
-                                      <div class="form-group">
-                                          
-                                          <div class="col-xs-6 col-md-10">
-                                              <label for="password"><h4>Password</h4></label>
-                                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          
-                                          <div class="col-xs-6 col-md-10">
-                                            <label for="password2"><h4>Verify</h4></label>
-                                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                           <div class="col-xs-6 col-md-10 col-xs-12">
-                                                <br>
-                                                <button class="btn btn-lg btn-danger" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                                 <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                                            </div>
                                       </div>
                                 </form>
-                              
-                              <hr>
-                              
-                             </div>
-                               
-                          </div><!--/tab-pane-->
                           </div><!--/tab-content-->
                 
                         </div><!--/col-9-->
@@ -125,7 +101,6 @@
           </main>       
         </div>
         <div id="userDashboardfooter"></div>
-
 
 
     <script src="js/script.js"></script>

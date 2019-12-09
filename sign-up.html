@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon44.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <title>Sendit</title>
 </head>
 <body>
@@ -19,10 +20,10 @@
            <img src="images/sign-up.svg" class="image-fluid" width="500" height="500">
         </div>
         
-        <div class="col-sm-7 col-md-6 mt-5">
+        <div class="col-sm-7 col-md-6 mt-5 display">
             <h2 class="fw-b py-4 text-center" >CREATE AN ACCOUNT</h2>
             <div class="INFORMATION">
-                <input type="submit" class="fw-b text-left form-control " value="LOG IN INFORMATION">
+                <input type="submit" id="infoS" class="fw-b text-left form-control " value="LOG IN INFORMATION">
             </div>
 
                <form class="pt-3" action="">
@@ -31,50 +32,50 @@
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
                             </div>
                        </div>
 
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name"placeholder="Email">
+                                <input type="email" class="form-control" id="email"placeholder="Email">
                             </div>
                        </div>
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name" placeholder="Phone">
+                                <input type="text" class="form-control" id="phone_number" placeholder="Phone">
                             </div>
                        </div>
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name" placeholder="Address">
+                                <input type="text" class="form-control" id="address" placeholder="Address">
                             </div>
                        </div>
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name" placeholder="Password">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
                             </div>
                        </div>
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="name" class="form-control" id="name" placeholder="Comfirm password">
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Comfirm password">
                             </div>
                        </div>
                    </div>
                     
 
                     <div class="btn-contain py-2">
-                        <button type="submit" class="btn btn-danger btn-block" >sign up</button>
+                        <button type="submit" id="submitForm" class="btn btn-danger btn-block" >sign up</button>
                     </div>
                         <div class="row py-4 px-4 d-flex ">
                             <p class="fw-b">Already Have An Account?</p>
                             <div class=" ml-auto" >
-                                <a href="sign-up.html" style="color: #ff2b2b; text-decoration: none;" target="_side">Log In</a>
+                                <a href="login.html" style="color: #ff2b2b; text-decoration: none;">Log In</a>
                             </div>
                             
                         </div>
@@ -91,7 +92,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
+    <script src="./js/api.js"></script>
 
   </body>
 </html>
