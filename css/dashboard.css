@@ -178,10 +178,6 @@ a {
 	}
 }
 @media (max-width: 900px) {
-	#sidebar {
-		/* display:none; */
-	}
-
 	.nav-link {
 		padding: .5rem 0rem;
 	}
@@ -376,9 +372,6 @@ h4 {
 }
 
 .loginlink-section {
-	/* background: linear-gradient(45deg, black, #ff2b2b); */
-	/* background-color: #f8002f; */
-
 	background-image: linear-gradient(326deg, #000c14 69%, #ff2b2b 0%);
 	padding: 220px 30px;
 	height: 600px;
