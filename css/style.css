@@ -628,3 +628,8 @@ padding-top: 6em;
 .quick-links a {
   text-decoration: none;
 }
+
+.infor {
+  text-align: center;
+  margin: 5px;
+}
