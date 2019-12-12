@@ -14,70 +14,66 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <title>Sendit-Dashboard</title>
-
   </head>
-
   <body>
       <section class="container">
         <div class="">
           <div class="row signup-container">
             <div class="col-md-5 loginlink-section fadeInRight">
-                
               <h1>Welcome Back!</h1>
               <p>If you already have an account, please click the button below to log in instead.</p>
               <a href="admin-login.html" class="btn round-btn">Log in</a>
-
             </div>
             <div class="col-md-7 admin-signup wow lightSpeedIn">
                 <div class="admin-logo">
                   <a class="navbar-brand mx-auto" href="index.html"> <img src="images/logo.png"> </a>
                 </div>
-
-                <form class="pt-3" action="">
-                    <h1 class="text-center">Create An Account</h1>
+                <form class="pt-3 display" action="" >
+                      <div class="INFORMATION">
+                        <h1 class="text-center">Create An Account</h1>
+                      </div>
                         <div class="row">
                             <div class="col-md-6">
                                  <div class="form-group">
                                      <label for="name"></label>
-                                     <input type="name" class="form-control" id="name" placeholder="Name">
-                                 </div>
-                            </div>
-     
-                            <div class="col-md-6">
-                                 <div class="form-group">
-                                     <label for="name"></label>
-                                     <input type="name" class="form-control" id="name"placeholder="Email">
+                                     <input type="name" class="form-control" id="name" placeholder="Full Name">
                                  </div>
                             </div>
                             <div class="col-md-6">
                                  <div class="form-group">
                                      <label for="name"></label>
-                                     <input type="name" class="form-control" id="name" placeholder="Phone">
+                                     <input type="email" class="form-control" id="email" placeholder="Email">
                                  </div>
                             </div>
                             <div class="col-md-6">
                                  <div class="form-group">
                                      <label for="name"></label>
-                                     <input type="name" class="form-control" id="name" placeholder="Address">
+                                     <input type="text" class="form-control" id="phone_number" placeholder="Phone">
                                  </div>
                             </div>
                             <div class="col-md-6">
                                  <div class="form-group">
                                      <label for="name"></label>
-                                     <input type="name" class="form-control" id="name" placeholder="Password">
+                                     <input type="text" class="form-control" id="address" placeholder="Address">
                                  </div>
                             </div>
                             <div class="col-md-6">
                                  <div class="form-group">
                                      <label for="name"></label>
-                                     <input type="name" class="form-control" id="name" placeholder="Confirm password">
+                                     <input type="password" class="form-control" id="password" placeholder="Password">
+                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                     <label for="name"></label>
+                                     <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
                                  </div>
                             </div>
                         </div>
                          
      
                          <div class="btn-contain py-2">
-                             <button type="submit" class="btn btn-danger btn-block" >Sign Up</button>
+                             <button type="submit" id="submitForm"  class="btn btn-danger btn-block" >Sign Up</button>
                          </div>
                             
                          </div>
@@ -94,6 +90,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/script.js"></script>
+    <script src="./js/UI.js"></script>
+    <script src="./js/adminSignup.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

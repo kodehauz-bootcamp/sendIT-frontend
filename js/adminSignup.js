@@ -1,18 +1,14 @@
 //instantiate the class UI
 const ui = new UI();
 
-const submitSignupForm = document.querySelector('#submitForm');
-
 function eventList() {
+	const submitSignupForm = document.querySelector('#submitForm');
+
 	//trigger the button
 	submitSignupForm.addEventListener('click', signUpUser);
 }
 
 eventList();
-
-
-
-
 
 async function signUpUser(e) {
 	e.preventDefault();
@@ -31,13 +27,8 @@ async function signUpUser(e) {
 	} else {
 		ui.printMessage('Thank You for Your Info, Processing!', 'alert-success');
 
-		submitSignupForm.innerHTML = `
-			<span class="spinner-border"></span> Processing
-		`;
-	
-
 		//get user details
-		const userDetails = {
+		const adminDetails = {
 			full_name: name,
 			email: email,
 			phone: phone_number,
@@ -49,21 +40,20 @@ async function signUpUser(e) {
 		// return console.log(userDetails)
 		//send through the api
 
-		await fetch('https://senditappkh.herokuapp.com/api/v1/signup', {
+		await fetch('https://senditappkh.herokuapp.com/api/v1/admin/signup',{
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(userDetails)
+			body: JSON.stringify(adminDetails)
 		})
 			.then(function(response) {
 				return response.json();
 			})
 			.then(function(data) {
 				console.log(data);
-				submitSignupForm.innerHTML = `sign-up`;
-				return window.location.href = '/login.html';
+				return window.location.href = '/admin-login.html';
 			})
 			.catch(function(error) {
 				console.log(error.message);

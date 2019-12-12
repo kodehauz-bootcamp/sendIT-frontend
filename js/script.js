@@ -198,3 +198,15 @@ function toggleSidebar() {
 }
 
 // chart graph
+
+//loader
+var loaderVa;
+
+function loaderFunction() {
+    loaderVa = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("loaderDiv").style.display = "block";
+}

@@ -1,8 +1,8 @@
 //instantiate the class UI
 const ui = new UI();
-const loginForm = document.querySelector('#buttonClick');
-function eventList() {
 
+function eventList() {
+	const loginForm = document.querySelector('#buttonClick');
 
 	//trigger the button
 	loginForm.addEventListener('click', LoginUser);
@@ -15,17 +15,13 @@ async function LoginUser(e) {
 
 	const email = document.querySelector('#loginEmail').value;
 	const password = document.querySelector('#loginPassword').value;
-	loginForm.innerHTML = `
-	<span class="spinner-border spinner-border-sm"></span> Processing
-`;
-
 
 	const userDetails = {
 		email: email,
 		password: password
 	};
 
-	await fetch('https://senditappkh.herokuapp.com/api/v1/login', {
+	await fetch('https://senditappkh.herokuapp.com/api/v1/admin/login', {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
@@ -38,13 +34,10 @@ async function LoginUser(e) {
 		})
 		.then(function(data) {
 			console.log(data);
-			loginForm.innerHTML = `
-			<span class="spinner-border spinner-border-sm"></span> Processing
-		`;
 			const token = data.token;
-			sessionStorage.setItem('user_jwt', token);
+			sessionStorage.setItem('admin_jwt', token);
 
-			return (window.location.href = '/dashboard.html');
+			return (window.location.href = '/admin-dashboard.html');
 		})
 		.catch(function(error) {
 			console.log(error.message);
