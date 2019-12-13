@@ -1,8 +1,8 @@
 //instantiate the class UI
 const ui = new UI();
-
+const submitSignupForm = document.querySelector('#submitForm');
 function eventList() {
-	const submitSignupForm = document.querySelector('#submitForm');
+	
 
 	//trigger the button
 	submitSignupForm.addEventListener('click', signUpUser);
@@ -26,7 +26,9 @@ async function signUpUser(e) {
 		ui.printMessage('Password Must be Equal to Confirm Password', 'alert-danger');
 	} else {
 		ui.printMessage('Thank You for Your Info, Processing!', 'alert-success');
-
+		submitSignupForm.innerHTML = `
+		<span class="spinner-border spinner-border-sm"></span> Processing
+	`;
 		//get user details
 		const adminDetails = {
 			full_name: name,
@@ -53,6 +55,7 @@ async function signUpUser(e) {
 			})
 			.then(function(data) {
 				console.log(data);
+				submitSignupForm.innerHTML = `sign-up`;
 				return window.location.href = '/admin-login.html';
 			})
 			.catch(function(error) {

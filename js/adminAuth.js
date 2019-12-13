@@ -3,7 +3,7 @@ function Auth(req, res, next) {
 	console.log(token);
 
 	if (!token) {
-		window.location.href = '/admin-login.html';
+		window.location.href = './admin-login.html';
 	}
 }
 Auth();
@@ -12,7 +12,7 @@ Auth();
 function logoutAdmin() {
 	try {
 		sessionStorage.removeItem('admin_jwt');
-		return window.location.href = '/index.html';	
+		return window.location.href = './index.html';	
 	} catch (e) {
 		console.log(e.message);
 		alert('User already logged out');

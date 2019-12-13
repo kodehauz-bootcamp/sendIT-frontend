@@ -44,7 +44,7 @@ async function LoginUser(e) {
 			const token = data.token;
 			sessionStorage.setItem('user_jwt', token);
 
-			return (window.location.href = '/dashboard.html');
+			return (window.location.href = './dashboard.html');
 		})
 		.catch(function(error) {
 			console.log(error.message);

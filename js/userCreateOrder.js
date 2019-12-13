@@ -1,11 +1,11 @@
 //instantiate the class UI
 const ui = new UI();
 
-const submitSignupForm = document.querySelector('#submitForm');
+const placeOrderForm = document.querySelector('#submitForm');
 
 function eventList() {
 	//trigger the button
-	submitSignupForm.addEventListener('click', signUpUser);
+	placeOrderForm.addEventListener('click', placeOrder);
 }
 
 eventList();
@@ -14,42 +14,41 @@ eventList();
 
 
 
-async function signUpUser(e) {
+async function placeOrder(e) {
 	e.preventDefault();
 
 	const name = document.querySelector('#name').value;
-	const email = document.querySelector('#email').value;
+	const parcel_name = document.querySelector('#parcel_name').value;
+	const weight = document.querySelector('#weight').value;
+	const location = document.querySelector('#location').value;
+	const destination = document.querySelector('#destination').value;
 	const phone_number = document.querySelector('#phone_number').value;
-	const address = document.querySelector('#address').value;
-	const password = document.querySelector('#password').value;
-	const confirmPassword = document.querySelector('#confirmPassword').value;
+	
 
-	if (!name || !email || !phone_number || !address || !password || !confirmPassword) {
+	if (!name || !location  || !location || !destination || !phone_number) {
 		ui.printMessage('Fill all Fields!!!', 'alert-danger');
-	} else if (password != confirmPassword) {
-		ui.printMessage('Password Must be Equal to Confirm Password', 'alert-danger');
 	} else {
 		ui.printMessage('Thank You for Your Info, Processing!', 'alert-success');
 
-		submitSignupForm.innerHTML = `
+		placeOrderForm.innerHTML = `
 			<span class="spinner-border spinner-border-sm"></span> Processing
 		`;
 	
 
 		//get user details
 		const userDetails = {
-			full_name: name,
-			email: email,
-			phone: phone_number,
-			address: address,
-			password: password,
-			confirmPassword: confirmPassword
+			name:name,
+			parcel_name: parcel_name,
+			weight: weight,
+			location: location,
+			destination: destination,
+			phone_number: phone_number
 		};
 
 		// return console.log(userDetails)
 		//send through the api
 
-		await fetch('https://senditappkh.herokuapp.com/api/v1/signup', {
+		await fetch('https://senditappkh.herokuapp.com/api/v1/create/order', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -62,8 +61,8 @@ async function signUpUser(e) {
 			})
 			.then(function(data) {
 				console.log(data);
-				submitSignupForm.innerHTML = `sign-up`;
-				return window.location.href = './login.html';
+				placeOrderForm.innerHTML = `Confirm Order`;
+				return window.location.href = './payment-slip.html';
 			})
 			.catch(function(error) {
 				console.log(error.message);

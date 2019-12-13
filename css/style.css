@@ -634,7 +634,6 @@ padding-top: 6em;
   margin: 5px;
 }
 
-
 /* Center the loader */
 #loader {
   position: absolute;
@@ -685,3 +684,7 @@ padding-top: 6em;
 #loaderDiv {
   display: none;
 }   
+
+.mb5{
+  margin-bottom:5rem;
+}

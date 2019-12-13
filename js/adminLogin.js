@@ -1,8 +1,9 @@
 //instantiate the class UI
 const ui = new UI();
+const loginForm = document.querySelector('#buttonClick');
 
 function eventList() {
-	const loginForm = document.querySelector('#buttonClick');
+	
 
 	//trigger the button
 	loginForm.addEventListener('click', LoginUser);
@@ -15,7 +16,9 @@ async function LoginUser(e) {
 
 	const email = document.querySelector('#loginEmail').value;
 	const password = document.querySelector('#loginPassword').value;
-
+	loginForm.innerHTML = `
+			<span class="spinner-border spinner-border-sm"></span> Processing
+		`;
 	const userDetails = {
 		email: email,
 		password: password
@@ -36,8 +39,8 @@ async function LoginUser(e) {
 			console.log(data);
 			const token = data.token;
 			sessionStorage.setItem('admin_jwt', token);
-
-			return (window.location.href = '/admin-dashboard.html');
+			loginForm.innerHTML = `Log In`;
+			return (window.location.href = './admin-dashboard.html');
 		})
 		.catch(function(error) {
 			console.log(error.message);

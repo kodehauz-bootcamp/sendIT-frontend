@@ -23,9 +23,9 @@
         </div>
       </div>
     <!-- contact-section -->
-    <section id="contact-block">
-        <div class="container">
-            <div class="row">
+    <section id="contact-block"">
+        <div class="container mb5">
+            <div class="row mb-5">
                 <div class="col-md-2"></div>
                 <div class="col-md-8 mx-auto contact-img">
                     <img src="images/Contact us.png" class="img-fluid">
@@ -46,24 +46,27 @@
             </div>
             <div class="col-md-8">
 
-                <div class="row">
+                <div class="row ">
                     <div class="col-md-12">
-                      <form action="" id="contact-form">
-                          <h3>Write to us</h3>
+                      <form action="" id="contactForm" class="display">
+                          <h3 class="">Write to us</h3>
+                          <div class="INFORMATION">
+                                <!-- <span id="infoS" class="" ></span> -->
+                            </div>
                           <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="userName" placeholder="Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Full Name">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="emailNo" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" id="phoneNo" placeholder="Phone">
+                                    <input type="text" class="form-control" id="phone_number" placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
@@ -73,11 +76,11 @@
                             </div>
                             <div class="col-md-12 col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" id="message" placeholder="Message"></textarea>
+                                    <textarea class="form-control" rows="5" id="content" placeholder="Message"></textarea>
                                 </div>
                             </div>
-                            <div class="button-container">
-                                <button type="button" class="btn btn-red">Send Message</button>
+                            <div class="button-container m-auto ">
+                                <button type="submit" id="submitForm" class="btn btn-danger">Send Message</button>
                             </div>
                           </div>
                           </form>
@@ -91,6 +94,8 @@
     <div id="footer" class="wow fadeInDown"></div>
    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script src="js/script.js"></script>
+    <script src="./js/UI.js"></script>
+    <script src="js/contact.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
