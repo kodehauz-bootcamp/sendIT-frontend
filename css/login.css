@@ -63,16 +63,17 @@ body{-webkit-transition: 3s;
   }
 
   .login_button {
-    display:block;
-    width:60%;
-    Margin:5% auto ;
+    display: block;
+    width: 80%;
+    margin: 5% auto;
     text-align: center;
     Background-color: #FF2B2B;
-    color:White; 
-    font-size:1.324vw;
-    border-radius:8px;
+    color: White;
+    font-size: 1.324vw;
+    border-radius: 8px;
     -webkit-transition: 1s;
     transition: 1s;
+    padding:3px;
 
 }
 
@@ -127,14 +128,16 @@ body{-webkit-transition: 3s;
 
   }
 
-  .facebook:hover {
+  .facebook a:hover {
     background-color:#000;
+    -webkit-transition: 1s;
     
   }
 
-  .twitter:hover  {
+  .twitter a:hover  {
     background:#ff2b2b;
     color: #fff;
+    -webkit-transition: 1s;
   }
   
   .terms_conditions p{

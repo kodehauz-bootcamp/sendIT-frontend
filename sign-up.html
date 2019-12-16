@@ -23,7 +23,7 @@
         <div class="col-sm-7 col-md-6 mt-5 display">
             <h2 class="fw-b py-4 text-center" >CREATE AN ACCOUNT</h2>
             <div class="INFORMATION">
-                <input type="submit" id="infoS" class="fw-b text-left form-control " value="LOG IN INFORMATION">
+                <input type="submit" id="infoS" class="fw-b text-left form-control" value="LOG IN INFORMATION">
             </div>
 
                <form class="pt-3" action="#">
@@ -32,7 +32,7 @@
                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" placeholder="Full Name">
                             </div>
                        </div>
 
@@ -70,7 +70,7 @@
                     
 
                     <div class="btn-contain py-2">
-                        <button type="submit" id="submitForm" class="btn btn-danger btn-block" >sign up</button>
+                        <button type="submit" id="submitForm" class="btn btn-danger btn-block" >sign up </button>
                     </div>
                         <div class="row py-4 px-4 d-flex ">
                             <p class="fw-b">Already Have An Account?</p>
@@ -94,6 +94,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./js/UI.js"></script>
     <script src="./js/signup.js"></script>
+
+    <script>
+        $('.btn').on('click', function() {
+   var $this = $(this);
+   $this.button('loading');
+   setTimeout(function() {
+      $this.button('reset');
+   }, 8000);
+});
+   </script>
 
   </body>
 </html>

@@ -1,11 +1,11 @@
 //instantiate the class UI
 const ui = new UI();
 
-const submitSignupForm = document.querySelector('#submitForm');
+const contactUs = document.querySelector('#submitForm');
 
 function eventList() {
 	//trigger the button
-	submitSignupForm.addEventListener('click', signUpUser);
+	contactUs.addEventListener('click', contactUsForm);
 }
 
 eventList();
@@ -14,42 +14,38 @@ eventList();
 
 
 
-async function signUpUser(e) {
+async function contactUsForm(e) {
 	e.preventDefault();
 
 	const name = document.querySelector('#name').value;
 	const email = document.querySelector('#email').value;
 	const phone_number = document.querySelector('#phone_number').value;
-	const address = document.querySelector('#address').value;
-	const password = document.querySelector('#password').value;
-	const confirmPassword = document.querySelector('#confirmPassword').value;
+	const subject = document.querySelector('#subject').value;
+	const content = document.querySelector('#content').value;
 
-	if (!name || !email || !phone_number || !address || !password || !confirmPassword) {
+	if (!name || !email) {
 		ui.printMessage('Fill all Fields!!!', 'alert-danger');
-	} else if (password != confirmPassword) {
-		ui.printMessage('Password Must be Equal to Confirm Password', 'alert-danger');
 	} else {
 		ui.printMessage('Thank You for Your Info, Processing!', 'alert-success');
 
-		submitSignupForm.innerHTML = `
+		contactUs.innerHTML = `
 			<span class="spinner-border spinner-border-sm"></span> Processing
 		`;
 	
 
 		//get user details
 		const userDetails = {
-			full_name: name,
+			name: name,
 			email: email,
-			phone: phone_number,
-			address: address,
-			password: password,
-			confirmPassword: confirmPassword
+			phone_number: phone_number,
+			subject: subject,
+			content: content
 		};
-
+    
 		// return console.log(userDetails)
 		//send through the api
 
-		await fetch('https://senditappkh.herokuapp.com/api/v1/signup', {
+		await fetch('https://senditappkh.herokuapp.com/api/v1/contact', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -62,8 +58,8 @@ async function signUpUser(e) {
 			})
 			.then(function(data) {
 				console.log(data);
-				submitSignupForm.innerHTML = `sign-up`;
-				return window.location.href = './login.html';
+				contactUs.innerHTML = `Send Message`;
+				return window.location.href = '/contact.html';
 			})
 			.catch(function(error) {
 				console.log(error.message);

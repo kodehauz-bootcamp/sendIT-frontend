@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Sendit</title>
 </head>
-<body>
+<body onload="loaderFunction()">
+  <div id="loader"  class="wow fadeInDown"></div>
+  <div style="display:none;" id="loaderDiv" class="animate-bottom">
     <div id="header" class="wow fadeIn"></div>
     <div class="banner-bg mb-10 wow fadeIn">
       <div class="container">
@@ -82,7 +84,7 @@
             </div>
             <div class="col-md-6 col-12">
               <h3 class="fw-b">Calculate Cost</h3>
-              <form class="pt-5" action="">
+              <form class="pt-5" action="login.html">
                 <div class="form-group">
                   <div class="row">
                       <div class="col-md-2">
@@ -161,6 +163,7 @@
     </div>
    <div id="footer" class="wow fadeInDown"></div>
    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  </div>
     <script src="js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
