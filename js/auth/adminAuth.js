@@ -8,14 +8,12 @@ function Auth(req, res, next) {
 }
 Auth();
 
-
 function logoutAdmin() {
 	try {
 		sessionStorage.removeItem('admin_jwt');
-		return window.location.href = './index.html';	
+		return (window.location.href = './index.html');
 	} catch (e) {
 		console.log(e.message);
 		alert('User already logged out');
 	}
-	
- }
+}
