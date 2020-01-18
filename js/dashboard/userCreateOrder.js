@@ -1,4 +1,25 @@
 //instantiate the class UI
+class UI {
+	//printmessage to the page
+	printMessage(message, className) {
+		//div containing the message whether error or success
+		const messageDiv = document.createElement('div');
+		messageDiv.classList.add('alert', 'infor', className);
+		messageDiv.setAttribute('role', 'alert');
+		messageDiv.appendChild(document.createTextNode(message));
+
+		//where it will be displayed
+		const refMessage = document.querySelector('.display');
+		refMessage.insertBefore(messageDiv, document.querySelector('.INFORMATION'));
+
+		//set timerto remove the messge
+		setTimeout(() => {
+			document.querySelector('.alert').remove();
+		}, 3000);
+	}
+
+	
+}
 const ui = new UI();
 
 const placeOrderForm = document.querySelector('#submitForm');

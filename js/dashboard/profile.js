@@ -1,7 +1,7 @@
 // const ui = new UI();
 
 async function viewProfile() {
-	console.log('instructed');
+	// console.log('instructed');
 	await fetch('https://senditappkh.herokuapp.com/api/v1/me', {
 		method: 'GET',
 		headers: {
