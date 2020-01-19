@@ -1,39 +1,34 @@
-//instantiate the class UI
-class UI {
-	//printmessage to the page
-	printMessage(message, className) {
-		//div containing the message whether error or success
-		const messageDiv = document.createElement('div');
-		messageDiv.classList.add('alert', 'infor', className);
-		messageDiv.setAttribute('role', 'alert');
-		messageDiv.appendChild(document.createTextNode(message));
-
-		//where it will be displayed
-		const refMessage = document.querySelector('.display');
-		refMessage.insertBefore(messageDiv, document.querySelector('.INFORMATION'));
-
-		//set timerto remove the messge
-		setTimeout(() => {
-			document.querySelector('.alert').remove();
-		}, 3000);
-	}
-
-	
-}
 const ui = new UI();
 
 const placeOrderForm = document.querySelector('#submitForm');
 
 function eventList() {
+	//default loading
+	document.addEventListener('DOMContentLoaded', loader);
+
 	//trigger the button
 	placeOrderForm.addEventListener('click', placeOrder);
 }
 
 eventList();
 
+async function loader() {
+	await axios.get('https://nigerian-states-info.herokuapp.com/api/v1/states').then((res) => {
+		const states = res.data.data;
+		const select = document.querySelectorAll('select');
+		// return console.log(select);
+		select.forEach((tag) => {
+			states.forEach((state) => {
+				const option = document.createElement('option');
+				option.value = state.Name.toUpperCase();
+				option.innerHTML = state.Name.toUpperCase();
 
-
-
+				//appending the options
+				tag.appendChild(option);
+			});
+		});
+	});
+}
 
 async function placeOrder(e) {
 	e.preventDefault();
@@ -44,9 +39,25 @@ async function placeOrder(e) {
 	const location = document.querySelector('#location').value;
 	const destination = document.querySelector('#destination').value;
 	const phone_number = document.querySelector('#phone_number').value;
-	
+	const address = document.querySelector('#address').value;
+	const r_name = document.querySelector('#r_name').value;
+	const r_email = document.querySelector('#r_email').value;
+	const r_address = document.querySelector('#r_address').value;
+	const r_phone_number = document.querySelector('#r_phone_number').value;
 
-	if (!name || !location  || !location || !destination || !phone_number) {
+	if (
+		!name ||
+		!location ||
+		!destination ||
+		!phone_number ||
+		!address ||
+		!r_name ||
+		!r_email ||
+		!r_address ||
+		!r_phone_number ||
+		!weight ||
+		!parcel_name
+	) {
 		ui.printMessage('Fill all Fields!!!', 'alert-danger');
 	} else {
 		ui.printMessage('Thank You for Your Info, Processing!', 'alert-success');
@@ -54,40 +65,69 @@ async function placeOrder(e) {
 		placeOrderForm.innerHTML = `
 			<span class="spinner-border spinner-border-sm"></span> Processing
 		`;
-	
 
 		//get user details
 		const userDetails = {
-			name:name,
+			sender_name: name,
+			recipient_name: r_name,
+			recipient_email: r_email,
 			parcel_name: parcel_name,
 			weight: weight,
-			location: location,
-			destination: destination,
-			phone_number: phone_number
+			location_address: address,
+			location_state: location,
+			destination_address: r_address,
+			destination_state: destination,
+			sender_phone_number: phone_number,
+			recipient_phone_number: r_phone_number,
+			status: 'Pending',
+			price: '$100'
 		};
 
-		// return console.log(userDetails)
-		//send through the api
-
-		await fetch('https://senditappkh.herokuapp.com/api/v1/create/order', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: 'btn btn-success',
+				cancelButton: 'btn btn-danger'
 			},
-			body: JSON.stringify(userDetails)
-		})
-			.then(function(response) {
-				return response.json();
+			buttonsStyling: false
+		});
+
+		return swalWithBootstrapButtons
+			.fire({
+				title: 'Woow!!!!!',
+				text: `Distance Calculated is xx and the price is ${userDetails.price}`,
+				imageUrl: 'https://unsplash.it/700/200',
+				imageWidth: 700,
+				imageHeight: 200,
+				showCancelButton: true,
+				confirmButtonText: 'Yes, Proceed Order!',
+				cancelButtonText: 'No, cancel!',
+				reverseButtons: true
 			})
-			.then(function(data) {
-				console.log(data);
-				placeOrderForm.innerHTML = `Confirm Order`;
-				return window.location.href = './payment-slip.html';
-			})
-			.catch(function(error) {
-				console.log(error.message);
-				ui.printMessage(error.message, 'alert-danger');
+			.then(async (result) => {
+				if (result.value) {
+					await fetch('https://senditappkh.herokuapp.com/api/v1/create/order', {
+						method: 'POST',
+						headers: {
+							Accept: 'application/json',
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${sessionStorage.getItem('user-jwt')}`
+						},
+						body: JSON.stringify(userDetails)
+					})
+						.then(function(data) {
+							return console.log(data);
+						})
+						.catch(function(error) {
+							console.log(error.message);
+							ui.printMessage(error.message, 'alert-danger');
+						});
+					swalWithBootstrapButtons.fire('Completed!', 'Your Order is Confirmed.', 'success');
+				} else if (
+					/* Read more about handling dismissals below */
+					result.dismiss === Swal.DismissReason.cancel
+				) {
+					swalWithBootstrapButtons.fire('Cancelled', 'Your Order is Cancelled :)', 'error');
+				}
 			});
 	}
 }
