@@ -132,18 +132,24 @@ async function placeOrder(e) {
 						headers: {
 							Accept: 'application/json',
 							'Content-Type': 'application/json',
-							Authorization: `Bearer ${sessionStorage.getItem('user-jwt')}`
+							Authorization: `Bearer ${sessionStorage.getItem('user_jwt')}`
 						},
 						body: JSON.stringify(userDetails)
 					})
+						.then((res) => {
+							return res.json();
+						})
 						.then(function(data) {
-							return console.log(data);
+							placeOrderForm.innerHTML = `Submit`;
+							const payAuth = new PAYAUTH(order, price);
+							return payAuth.getOrder(data, price);
 						})
 						.catch(function(error) {
 							console.log(error.message);
 							ui.printMessage(error.message, 'alert-danger');
 						});
 					swalWithBootstrapButtons.fire('Completed!', 'Your Order is Confirmed.', 'success');
+					return (window.location.href = '/payment-slip.html');
 				} else if (
 					/* Read more about handling dismissals below */
 					result.dismiss === Swal.DismissReason.cancel
