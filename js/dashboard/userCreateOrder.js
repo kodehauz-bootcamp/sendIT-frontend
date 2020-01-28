@@ -1,4 +1,5 @@
 const ui = new UI();
+const geocord = new GEOCORD();
 
 const placeOrderForm = document.querySelector('#submitForm');
 
@@ -36,19 +37,19 @@ async function placeOrder(e) {
 	const name = document.querySelector('#name').value;
 	const parcel_name = document.querySelector('#parcel_name').value;
 	const weight = document.querySelector('#weight').value;
-	const location = document.querySelector('#location').value;
-	const destination = document.querySelector('#destination').value;
+	// const location = document.querySelector('#s_location').value;
+	// const destination = document.querySelector('#destination').value;
 	const phone_number = document.querySelector('#phone_number').value;
-	const address = document.querySelector('#address').value;
+	const address = document.querySelector('#s_l_address').value;
+	const location_major = document.querySelector('#s_s_address').value;
+	const r_major = document.querySelector('#r_s_address').value;
 	const r_name = document.querySelector('#r_name').value;
 	const r_email = document.querySelector('#r_email').value;
-	const r_address = document.querySelector('#r_address').value;
+	const r_address = document.querySelector('#r_l_address').value;
 	const r_phone_number = document.querySelector('#r_phone_number').value;
 
 	if (
 		!name ||
-		!location ||
-		!destination ||
 		!phone_number ||
 		!address ||
 		!r_name ||
@@ -56,7 +57,9 @@ async function placeOrder(e) {
 		!r_address ||
 		!r_phone_number ||
 		!weight ||
-		!parcel_name
+		!parcel_name ||
+		!r_major ||
+		!location_major
 	) {
 		ui.printMessage('Fill all Fields!!!', 'alert-danger');
 	} else {
@@ -66,22 +69,41 @@ async function placeOrder(e) {
 			<span class="spinner-border spinner-border-sm"></span> Processing
 		`;
 
+		//geting cordinates of the location and destination
+		const sender_loc = `${location_major} ${address}`;
+		const reciver_loc = ` ${r_major} ${r_address}`;
+		const location_cordinates = await geocord.getLocationCord(sender_loc);
+		const destination_cordinates = await geocord.getLocationCord(reciver_loc);
+		// return console.log(location_cordinates);
+		const loc_cord = location_cordinates.cordds.features[0].center;
+		const des_cor = destination_cordinates.cordds.features[0].center;
+
+		//calculate travel distance
+		const distance = await geocord.calculateDistance(loc_cord, des_cor);
+
+		//calculate price
+		const price = await geocord.calculatePrice(distance, weight);
+
 		//get user details
 		const userDetails = {
+			location_cordinates: loc_cord,
+			destination_cordinates: des_cor,
 			sender_name: name,
 			recipient_name: r_name,
 			recipient_email: r_email,
 			parcel_name: parcel_name,
 			weight: weight,
 			location_address: address,
-			location_state: location,
+			location_state: location_major,
 			destination_address: r_address,
-			destination_state: destination,
+			destination_state: r_major,
 			sender_phone_number: phone_number,
 			recipient_phone_number: r_phone_number,
 			status: 'Pending',
-			price: '$100'
+			travel_distance: Math.floor(distance)
 		};
+
+		// return console.log(userDetails);
 
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
@@ -94,7 +116,7 @@ async function placeOrder(e) {
 		return swalWithBootstrapButtons
 			.fire({
 				title: 'Woow!!!!!',
-				text: `Distance Calculated is xx and the price is ${userDetails.price}`,
+				text: `Distance Calculated is ${userDetails.travel_distance} km and the price is ${price}`,
 				imageUrl: 'https://unsplash.it/700/200',
 				imageWidth: 700,
 				imageHeight: 200,
