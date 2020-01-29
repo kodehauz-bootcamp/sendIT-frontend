@@ -517,3 +517,7 @@ a:hover {
 label h4 {
 	color: #000 !important;
 }
+
+.payment {
+	display: none;
+}

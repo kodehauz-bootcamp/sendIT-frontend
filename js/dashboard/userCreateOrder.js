@@ -1,7 +1,9 @@
 const ui = new UI();
 const geocord = new GEOCORD();
-
+let home = '';
 const placeOrderForm = document.querySelector('#submitForm');
+const btnPayment = document.querySelector('#btnPayment');
+const payAuth = new PAYAUTH();
 
 function eventList() {
 	//default loading
@@ -9,6 +11,9 @@ function eventList() {
 
 	//trigger the button
 	placeOrderForm.addEventListener('click', placeOrder);
+
+	//trigger payment button
+	btnPayment.addEventListener('click', viewPayment);
 }
 
 eventList();
@@ -37,8 +42,6 @@ async function placeOrder(e) {
 	const name = document.querySelector('#name').value;
 	const parcel_name = document.querySelector('#parcel_name').value;
 	const weight = document.querySelector('#weight').value;
-	// const location = document.querySelector('#s_location').value;
-	// const destination = document.querySelector('#destination').value;
 	const phone_number = document.querySelector('#phone_number').value;
 	const address = document.querySelector('#s_l_address').value;
 	const location_major = document.querySelector('#s_s_address').value;
@@ -48,6 +51,7 @@ async function placeOrder(e) {
 	const r_address = document.querySelector('#r_l_address').value;
 	const r_phone_number = document.querySelector('#r_phone_number').value;
 
+	//run validation before sending the data
 	if (
 		!name ||
 		!phone_number ||
@@ -127,6 +131,7 @@ async function placeOrder(e) {
 			})
 			.then(async (result) => {
 				if (result.value) {
+					// send the api
 					await fetch('https://senditappkh.herokuapp.com/api/v1/create/order', {
 						method: 'POST',
 						headers: {
@@ -140,16 +145,21 @@ async function placeOrder(e) {
 							return res.json();
 						})
 						.then(function(data) {
-							placeOrderForm.innerHTML = `Submit`;
-							const payAuth = new PAYAUTH(order, price);
-							return payAuth.getOrder(data, price);
+							// make the payment button to show
+							placeOrderForm.style.display = 'none';
+							btnPayment.style.display = 'block';
+
+							//initialise the payAuth class
+							payAuth.setOrder(data, price);
 						})
 						.catch(function(error) {
+							//print error
 							console.log(error.message);
 							ui.printMessage(error.message, 'alert-danger');
 						});
+
+					// show paymet display and button
 					swalWithBootstrapButtons.fire('Completed!', 'Your Order is Confirmed.', 'success');
-					return (window.location.href = '/payment-slip.html');
 				} else if (
 					/* Read more about handling dismissals below */
 					result.dismiss === Swal.DismissReason.cancel
@@ -159,4 +169,10 @@ async function placeOrder(e) {
 			});
 	}
 }
-// }
+
+async function viewPayment(e) {
+	e.preventDefault();
+	//getting the order
+	const order = payAuth.getOrderData;
+	return console.log(order);
+}

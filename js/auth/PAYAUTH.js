@@ -1,13 +1,20 @@
 class PAYAUTH {
-	constructor(order, price) {
-		this.order = order;
-		this.id = order.id;
-		this.price = price;
+	constructor() {
+		this.order, this.id, this.price;
 	}
 
-	getOrder(order, price) {
+	setOrder(order, price) {
 		this.order = order;
 		this.price = price;
+		this.id = order.id;
+	}
+
+	getOrderData() {
+		return this.order;
+	}
+
+	getOrderPrice() {
+		return this.price;
 	}
 
 	async paymentAuth() {
