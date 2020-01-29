@@ -1,26 +1,7 @@
 class PAYAUTH {
-	constructor() {
-		this.order, this.id, this.price;
-	}
-
-	setOrder(order, price) {
-		this.order = order;
-		this.price = price;
-		this.id = order.id;
-	}
-
-	getOrderData() {
-		return this.order;
-	}
-
-	getOrderPrice() {
-		return this.price;
-	}
-
-	async paymentAuth() {
+	async getPayUser() {
 		try {
-			let url = `https://senditappkh.herokuapp.com/api/v1/getSingle/order/${this.id}`;
-			const data = await fetch(url, {
+			const user = await fetch('https://senditappkh.herokuapp.com/api/v1/me', {
 				method: 'GET',
 				headers: {
 					Accept: 'application/json',
@@ -28,13 +9,14 @@ class PAYAUTH {
 					Authorization: `Bearer ${sessionStorage.getItem('user_jwt')}`
 				}
 			});
-			const order = await data.json();
+
+			const owner = await user.json();
 
 			return {
-				order
+				owner
 			};
-		} catch (err) {
-			return console.log(err.message);
+		} catch (error) {
+			console.log(`error has happened ${error.message}`);
 		}
 	}
 }

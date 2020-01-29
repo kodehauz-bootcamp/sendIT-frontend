@@ -1,13 +1,13 @@
 const ui = new UI();
 const geocord = new GEOCORD();
-let home = '';
+let orders, prices;
 const placeOrderForm = document.querySelector('#submitForm');
 const btnPayment = document.querySelector('#btnPayment');
-const payAuth = new PAYAUTH();
+// const pay = new PAYAUTH();
 
 function eventList() {
 	//default loading
-	document.addEventListener('DOMContentLoaded', loader);
+	// document.addEventListener('DOMContentLoaded', loader);
 
 	//trigger the button
 	placeOrderForm.addEventListener('click', placeOrder);
@@ -18,23 +18,23 @@ function eventList() {
 
 eventList();
 
-async function loader() {
-	await axios.get('https://nigerian-states-info.herokuapp.com/api/v1/states').then((res) => {
-		const states = res.data.data;
-		const select = document.querySelectorAll('select');
-		// return console.log(select);
-		select.forEach((tag) => {
-			states.forEach((state) => {
-				const option = document.createElement('option');
-				option.value = state.Name.toUpperCase();
-				option.innerHTML = state.Name.toUpperCase();
+// async function loader() {
+// 	await axios.get('https://nigerian-states-info.herokuapp.com/api/v1/states').then((res) => {
+// 		const states = res.data.data;
+// 		const select = document.querySelectorAll('select');
+// 		// return console.log(select);
+// 		select.forEach((tag) => {
+// 			states.forEach((state) => {
+// 				const option = document.createElement('option');
+// 				option.value = state.Name.toUpperCase();
+// 				option.innerHTML = state.Name.toUpperCase();
 
-				//appending the options
-				tag.appendChild(option);
-			});
-		});
-	});
-}
+// 				//appending the options
+// 				tag.appendChild(option);
+// 			});
+// 		});
+// 	});
+// }
 
 async function placeOrder(e) {
 	e.preventDefault();
@@ -150,7 +150,10 @@ async function placeOrder(e) {
 							btnPayment.style.display = 'block';
 
 							//initialise the payAuth class
-							payAuth.setOrder(data, price);
+							orders = data;
+							prices = price;
+
+							return;
 						})
 						.catch(function(error) {
 							//print error
@@ -173,6 +176,22 @@ async function placeOrder(e) {
 async function viewPayment(e) {
 	e.preventDefault();
 	//getting the order
-	const order = payAuth.getOrderData;
-	return console.log(order);
+
+	const order = orders.NewOrder;
+
+	const table = document.querySelector('tbody');
+	const tr = document.createElement('tr');
+	const Amount = document.querySelector('.Amount');
+
+	tr.innerHTML = `
+		<td>${order.parcel_name}</td>
+		<td>1</td>  
+		<th>${order.location_state}</th>
+		<td>${order.destination_state}</td>
+		<td>${order.weight}</td>
+	`;
+
+	table.appendChild(tr);
+
+	Amount.innerHTML = `${prices}`;
 }
